@@ -41,7 +41,7 @@ client.on("message", (message) => {
     message.reply("Please check your direct messages :mailbox_with_no_mail:");
   } else
   if (message.content === (prefix + "staff")) {
-    message.send({embed: {
+    message.channel.send({embed: {
       color: 3447003,
       title: "\n \n__:צוות השרת שלנו__",
       description: "** **\n**Main Owners** - Banana [Migserver Co]#9845 , Banana Bot#0692 , Derpy [MIG]#6522 , Daniel189#8677\n**OWNER** - 𝓕𝓐𝓡𝓘𝓓𝓝𝓘𝓖𝓔𝓜 [MIG]#7296 , !👑Nightmare👑#5906\n**CO-OWNER** -\n**ADMIN** -\n**MOD** - YonatanPC#9447\n**HELPER** - GreatGuy#9117",
@@ -51,10 +51,9 @@ client.on("message", (message) => {
           text: "Banana"
       }
     }});
-     message.reply("Please check your direct messages :mailbox_with_no_mail:");
   } else
   if (message.content === (prefix + "roles")) {
-    message.send({embed: {
+    message.channel.send({embed: {
       color: 3447003,
       title: "\n \n__:הרולים של בננה סרבר__",
       description: "** **\n**Main Owner**\n**Owner**\n**Co-Owner**\n**ADMIN**\n**MOD**\n**Friend**\n**HELPER**\n**Staff**\n**Bot**\n**Muted**\n**Support Team**",
