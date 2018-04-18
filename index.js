@@ -78,6 +78,7 @@ client.on('message', message => {
     message.reply("`/help` אני מחוברת, כדאי להתחיל תרשום");
 } else {
     message.reply(":warning: אין לך גישה לפקודה :warning:");
-}
+  }
+});
 
 client.login(process.env.BOT_TOKEN);
