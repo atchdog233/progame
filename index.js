@@ -51,6 +51,7 @@ client.on("message", (message) => {
           text: "Banana"
       }
     }});
+     message.reply("Please check your direct messages :mailbox_with_no_mail:");
   } else
   if (message.content === (prefix + "roles")) {
     message.send({embed: {
