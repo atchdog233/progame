@@ -44,7 +44,7 @@ client.on("message", (message) => {
     message.channel.send({embed: {
       color: 3447003,
       title: "\n \n__:צוות השרת שלנו__",
-      description: "** **\n**Main Owners** - Banana [Migserver Co]#9845 , Banana Bot#0692 , Derpy [MIG]#6522 , Daniel189#8677\n**OWNER** - 𝓕𝓐𝓡𝓘𝓓𝓝𝓘𝓖𝓔𝓜 [MIG]#7296 , !👑Nightmare👑#5906\n**CO-OWNER** -\n**ADMIN** -\n**MOD** - YonatanPC#9447\n**HELPER** - GreatGuy#9117",
+      description: "** **\n@Main Owner  - Banana [Migserver Co]#9845 , Banana Bot#0692 , Derpy [MIG]#6522 , Daniel189#8677\n@Owner - 𝓕𝓐𝓡𝓘𝓓𝓝𝓘𝓖𝓔𝓜 [MIG]#7296 , !👑Nightmare👑#5906\n**CO-OWNER** -\n**ADMIN** -\n**MOD** - YonatanPC#9447\n**HELPER** - GreatGuy#9117",
       footer: 
       {
           icon_url: client.user.avatarURL,
