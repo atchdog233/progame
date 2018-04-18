@@ -36,7 +36,7 @@ client.on("message", (message) => {
     }});
      message.reply(":mailbox_with_no_mail: תבדוק את ההודעות הפרטיות שלך");
   } else
-  if (message.content === (prefix + "invite")) {
+    if (message.content == (prefix + "invite")) {
     message.author.sendMessage("**__Invite The Bot:__**\n \nhttps://discordapp.com/api/oauth2/authorize?client_id=436126804365803520&permissions=0&scope=bot");
     message.reply("Please check your direct messages :mailbox_with_no_mail:");
   } else
@@ -71,6 +71,14 @@ client.on('message', msg => {
     msg.reply(`Pong! The ping is **${(client.ping).toFixed(0)}**ms!  :ping_pong:`)
   }
 });
+
+client.on('message', msg => {
+    if(msg.content == "/test") {
+        var hereRole = msg.channel.server.roles.get('name', 'here');
+        client.sendMessage(msg, hereRole.mention() + " is anyone here?");
+  }
+});
+
 
 client.on('message', message => {
   if (message.content === 'test') {
