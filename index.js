@@ -74,10 +74,7 @@ client.on('message', msg => {
 
 client.on('message', message => {
   if (message.content === 'test') {
-  if(message.member.roles.some(r=>["Main Owner", "Owner"].includes(r.name)) ) {
     message.reply("`/help` אני מחוברת, כדאי להתחיל תרשום");
-} else {
-    message.reply(":warning: אין לך גישה לפקודה :warning:");
   }
 });
 
