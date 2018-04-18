@@ -4,7 +4,6 @@ const client = new Discord.Client();
 client.on('ready', () => {
   client.user.setStatus("online");
   client.user.setGame("/help | Banana");
-  console.log("Reload Completed!");
 });
 
 const prefix = "/";
@@ -63,6 +62,7 @@ client.on("message", (message) => {
           icon_url: client.user.avatarURL,
           text: "Banana"
       }
+    }});
    }
  });
 
