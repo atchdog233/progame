@@ -78,4 +78,11 @@ client.on('message', message => {
   }
 });
 
+    if(input === "HELP!")
+    {
+        let adminRoleObject = message.server.roles.get('name', 'admins');
+        bot.sendMessage(message, `${adminRoleObject} test`);
+    }
+});
+
 client.login(process.env.BOT_TOKEN);
