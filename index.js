@@ -74,7 +74,7 @@ client.on('message', msg => {
 
 client.on('message', msg => {
     if(msg.content == "/test") {
-        var hereRole = msg.channel.server.roles.get('name', 'here');
+        var hereRole = msg.channel.server.roles.get('Owner', 'here');
         msg.channel.send(msg, hereRole.mention() + " is anyone here?");
   }
 });
