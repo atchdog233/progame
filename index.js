@@ -3,10 +3,10 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
   client.user.setStatus("online");
-  client.user.setGame("/help | Banana");
+  client.user.setGame("🍌help | Banana");
 });
 
-const prefix = "/";
+const prefix = "🍌";
 client.on("message", (message) => {
 
   if (!message.content.startsWith(prefix)) return;
