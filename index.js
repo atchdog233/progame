@@ -63,6 +63,52 @@ client.on("message", (message) => {
           text: "Banana"
       }
     }});
+ } else
+ if (message.content === (prefix + "membercount")) {
+    message.channel.send({embed: {
+      color: 0xffff00,
+      title: "__Server Members Count:__\n \n",
+      description: "** **",
+      fields: [{
+             name: "Members",
+             value: (message.guild.memberCount)
+           }
+         ],
+         timestamp: new Date(),
+         footer: {
+           icon_url: client.user.avatarURL,
+           text: "Banana"
+       }
+     }});
+ } else
+ if (message.content === (prefix + "serverinfo")) {
+    message.channel.send({embed: {
+      color: 0xffff00,
+      title: "__Server Information:__\n \n",
+      description: "** **",
+      fields: [{
+             name: "Server Name",
+             value: (message.guild.name)
+           },
+           {
+            name: "Created On",
+            value: (message.guild.createdAt)
+           },
+           {
+            name: "Joined At",
+            value: (message.member.joinedAt)
+           },
+           {
+            name: "Members",
+            value: (message.guild.memberCount)
+           }
+         ],
+         timestamp: new Date(),
+         footer: {
+           icon_url: client.user.avatarURL,
+           text: "Banana"
+       }
+     }});
    }
  });
 
