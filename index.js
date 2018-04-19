@@ -27,7 +27,7 @@ client.on("message", (message) => {
     message.author.sendMessage({embed: {
       color: 0xffff00,
       title: "\n \n__:הפקודות של בננה__",
-      description: "** **\n**/ping** - מראה לך כמה פינג יש לך\n**/discord** - הקישור לדיסקורד\n**/roles** - מראה לך את הרולים של הסרבר\n**/staff** - מראה לך איזה אנשים נמצאים בצוות שלנו\n**/help** - מראה לך את התפריט הזה",
+      description: "** **\n**/ping** - מראה לך כמה פינג יש לך\n**/discord** - הקישור לדיסקורד\n**/serverinfo** - \n**/membercount** - \n**/roles** - מראה לך את הרולים של הסרבר\n**/staff** - מראה לך איזה אנשים נמצאים בצוות שלנו\n**/help** - מראה לך את התפריט הזה",
       footer: 
       { 
           icon_url: client.user.avatarURL,
