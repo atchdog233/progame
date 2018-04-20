@@ -81,6 +81,17 @@ client.on("message", (message) => {
        }
      }});
  } else
+ if(message.content.startsWith(prefix + "userinfo ")) { //IF for the command.
+     if(message.mentions.users.first()) { //Check if the message has a mention in it.
+           let user = message.mentions.users.first(); //Since message.mentions.users returns a collection; we must use the first() method to get the first in the collection.
+           let output = user.username + user.discriminator /*Username and Discriminator*/ +
+           "\nAvatar URL: " + user.avatarURL; /*The Avatar URL*/
+           message.channel.sendMessage(output); //We send the output in the current channel.
+     } else {
+           message.reply("Invalid user."); //Reply with a mention saying "Invalid user."
+     }
+ }
+ } else
  if (message.content === (prefix + "serverinfo")) {
     message.channel.send({embed: {
       color: 0xffff00,
@@ -123,25 +134,5 @@ client.on('message', message => {
     message.reply("`/help` אני מחוברת, כדאי להתחיל תרשום");
   }
 });
-
-module.exports.run = async(bot, message, args) => {
-    let msg = await message.channel.send("doing some magic ...");
-    let target = message.mentions.users.first() || message.author;
-
-    await message.channel.send({files: [
-        {
-            attachment: target.displayAvatarURL,
-            name: "avatar.png"
-        }
-    ]});
-
-    msg.delete();
-}
-
-module.exports.help = {
-    name: "avatar",
-    description: "show the avatar of a user",
-    usage: "[@user]"
-}
 
 client.login(process.env.BOT_TOKEN);
