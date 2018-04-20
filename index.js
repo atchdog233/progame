@@ -113,8 +113,14 @@ client.on("message", (message) => {
  });
 
 client.on('message', msg => {
-  if (msg.content === '🍌ping') {
+  if (msg.content === '/ping') {
     msg.reply(`Pong! The ping is **${(client.ping).toFixed(0)}**ms!  :ping_pong:`)
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === '<@!436161342395908100> help') {
+    msg.channel.send(`test working`)
   }
 });
 
