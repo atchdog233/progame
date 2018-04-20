@@ -3,10 +3,10 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
   client.user.setStatus("online");
-  client.user.setGame("🍌help | Banana");
+  client.user.setGame("/help | Banana");
 });
 
-const prefix = "🍌";
+const prefix = "/";
 client.on("message", (message) => {
 
   if (!message.content.startsWith(prefix)) return;
@@ -27,7 +27,7 @@ client.on("message", (message) => {
     message.author.sendMessage({embed: {
       color: 0xffff00,
       title: "\n \n__:הפקודות של בננה__",
-      description: "** **\n**🍌ping** - מראה לך כמה פינג יש לך\n**🍌discord** - הקישור לדיסקורד\n**🍌serverinfo** - \n**🍌membercount** - \n**🍌roles** - מראה לך את הרולים של הסרבר\n**🍌staff** - מראה לך איזה אנשים נמצאים בצוות שלנו\n**🍌help** - מראה לך את התפריט הזה",
+      description: "** **\n**/ping** - מראה לך כמה פינג יש לך\n**/discord** - הקישור לדיסקורד\n**/serverinfo** - Server Information\n**/membercount** - Member Count\n**/roles** - מראה לך את הרולים של הסרבר\n**/staff** - מראה לך איזה אנשים נמצאים בצוות שלנו\n**/help** - מראה לך את התפריט הזה",
       footer: 
       { 
           icon_url: client.user.avatarURL,
@@ -120,7 +120,16 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content === '<@!436161342395908100> help') {
-    msg.channel.send(`test working`)
+    message.author.sendMessage({embed: {
+      color: 0xffff00,
+      title: "\n \n__:הפקודות של בננה__",
+      description: "** **\n**/ping** - מראה לך כמה פינג יש לך\n**/discord** - הקישור לדיסקורד\n**/serverinfo** - Server Information\n**/membercount** - Member Count\n**/roles** - מראה לך את הרולים של הסרבר\n**/staff** - מראה לך איזה אנשים נמצאים בצוות שלנו\n**/help** - מראה לך את התפריט הזה",
+      footer: 
+      { 
+          icon_url: client.user.avatarURL,
+          text: "Banana"
+      }
+    }});
   }
 });
 
