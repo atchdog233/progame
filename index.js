@@ -121,7 +121,6 @@ client.on("message", (message) => {
      }});
     } else {
           message.reply("Invalid Command"); //Reply with a mention saying "Invalid Command"
-    }
    }
  });
 
