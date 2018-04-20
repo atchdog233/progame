@@ -7,7 +7,6 @@ client.on('ready', () => {
 });
 
 const prefix = "🍌";
-const prefix = "<@!436161342395908100> ";
 client.on("message", (message) => {
 
   if (!message.content.startsWith(prefix)) return;
