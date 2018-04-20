@@ -128,9 +128,8 @@ client.on('message', msg => {
       { 
           icon_url: client.user.avatarURL,
           text: "Banana"
-    }});
-  }
-});
+       }
+     }});
 
 client.on('message', message => {
   if (message.content === 'test') {
