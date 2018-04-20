@@ -119,6 +119,9 @@ client.on("message", (message) => {
            text: "Banana"
        }
      }});
+    } else {
+          message.reply("Invalid Command"); //Reply with a mention saying "Invalid Command"
+    }
    }
  });
 
