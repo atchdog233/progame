@@ -90,7 +90,6 @@ client.on("message", (message) => {
      } else {
            message.reply("Invalid user."); //Reply with a mention saying "Invalid user."
      }
- }
  } else
  if (message.content === (prefix + "serverinfo")) {
     message.channel.send({embed: {
