@@ -81,15 +81,15 @@ client.on("message", (message) => {
        }
      }});
  } else
- if(message.content.startsWith(prefix + "userinfo ")) { //IF for the command.
+ if(message.content.startsWith(prefix + "avatar ")) { //IF for the command.
      if(message.mentions.users.first()) { //Check if the message has a mention in it.
            let user = message.mentions.users.first(); //Since message.mentions.users returns a collection; we must use the first() method to get the first in the collection.
-           let output = user.username + user.discriminator /*Username and Discriminator*/ +
+           let output = user.username /*Username and Discriminator*/ +
            "\nAvatar URL: " + user.avatarURL; /*The Avatar URL*/
            message.channel.sendMessage(output); //We send the output in the current channel.
-     } else {
-           message.reply("Invalid user."); //Reply with a mention saying "Invalid user."
-     }
+    } else {
+          message.reply("Invalid user."); //Reply with a mention saying "Invalid user."
+    }
  } else
  if (message.content === (prefix + "serverinfo")) {
     message.channel.send({embed: {
