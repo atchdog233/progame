@@ -128,6 +128,12 @@ client.on('message', msg => {
   }
 });
 
+client.on('message', msg => {
+  if (msg.content === '/avatar') {
+    msg.reply("You need to Mention User")
+  }
+});
+
 client.on('message', message => {
   if (message.content === 'test') {
     message.reply("`/help` אני מחוברת, כדאי להתחיל תרשום");
