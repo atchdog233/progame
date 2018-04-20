@@ -118,19 +118,6 @@ client.on('message', msg => {
   }
 });
 
-client.on('message', msg => {
-  if (msg.content === '<@!436161342395908100> help') {
-    message.author.sendMessage({embed: {
-      color: 0xffff00,
-      title: "\n \n__:הפקודות של בננה__",
-      description: "** **\n**/ping** - מראה לך כמה פינג יש לך\n**/discord** - הקישור לדיסקורד\n**/serverinfo** - Server Information\n**/membercount** - Member Count\n**/roles** - מראה לך את הרולים של הסרבר\n**/staff** - מראה לך איזה אנשים נמצאים בצוות שלנו\n**/help** - מראה לך את התפריט הזה",
-      footer: 
-      { 
-          icon_url: client.user.avatarURL,
-          text: "Banana"
-       }
-     }});
-
 client.on('message', message => {
   if (message.content === 'test') {
     message.reply("`/help` אני מחוברת, כדאי להתחיל תרשום");
