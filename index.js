@@ -103,6 +103,12 @@ client.on("message", (message) => {
           message.reply("Invalid user."); //Reply with a mention saying "Invalid user."
     }
  } else
+ case "say":
+ message.delete()
+ if (message.content.startsWith("!say")) {
+ message.channel.sendMessage((message.author.username) + " says: " + (message.content.replace('!say ','')));
+ };
+ break;
  if (message.content === (prefix + "serverinfo")) {
     message.channel.send({embed: {
       color: 0xffff00,
@@ -150,14 +156,6 @@ client.on('message', message => {
   if (message.content === 'test') {
     message.reply("`/help` אני מחוברת, כדאי להתחיל תרשום");
   }
-});
-
-client.on('message', message => {
-  if(command === "say"){
-    let text = args.slice(1).join(" ");
-    message.delete();
-    message.channel.send(text);
- }
 });
 
 client.login(process.env.BOT_TOKEN);
