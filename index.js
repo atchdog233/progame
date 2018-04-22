@@ -23,7 +23,7 @@ client.on("message", (message) => {
       }
     }});
   } else
-  if (message.content === (prefix + "")) {
+  if (message.content === (prefix + "أنا ابن العاهرة")) {
     message.channel.send({embed: {
       color: 0xffff00,
       title: "\n \n**                                                                              __:חוקים__**",
