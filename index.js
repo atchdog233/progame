@@ -26,7 +26,7 @@ client.on("message", (message) => {
   if (message.content === (prefix + "say")) {
   let text = args.slice(1).join(" ");
    message.delete();
-   message.channel.send(text);
+   message.channel.send(text)
   };
   } else
   if (message.content === (prefix + "أنا ابن العاهرة")) {
