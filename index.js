@@ -87,7 +87,7 @@ client.on("message", (message) => {
            },
            {
             name: "Bots",
-            value: (message.guild.botCount)
+            value: (message.guild.botsCount)
            }
          ],
          timestamp: new Date(),
