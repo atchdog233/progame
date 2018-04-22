@@ -154,9 +154,9 @@ client.on('message', message => {
 
 client.on('message', message => {
   if (message.content === '/say') {
-   let text = args.slice(1).join(" ");
-   message.delete();
-   message.channel.send(text);
+  let text = args.slice(1).join(" ");
+  message.delete();
+  message.channel.send(text);
  }
 });
 
