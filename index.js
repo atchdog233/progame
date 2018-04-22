@@ -23,6 +23,12 @@ client.on("message", (message) => {
       }
     }});
   } else
+  if (message.content === (prefix + "say")) {
+  let text = args.slice(1).join(" ");
+   message.delete();
+   message.channel.send(text);
+  };
+  } else
   if (message.content === (prefix + "أنا ابن العاهرة")) {
     message.channel.send({embed: {
       color: 0xffff00,
