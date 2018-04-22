@@ -153,11 +153,10 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-  if (message.content === '/say') {
+if(command === "say"){
   let text = args.slice(1).join(" ");
   message.delete();
   message.channel.send(text);
- }
-});
+}
 
 client.login(process.env.BOT_TOKEN);
