@@ -103,10 +103,8 @@ client.on("message", (message) => {
           message.reply("Invalid user."); //Reply with a mention saying "Invalid user."
     }
  } else
- case "say":
- message.delete()
  if (message.content.startsWith("!say")) {
- message.channel.sendMessage((message.author.username) + " says: " + (message.content.replace('!say ','')));
+   message.channel.sendMessage((message.author.username) + " says: " + (message.content.replace('!say ','')));
  };
  break;
  if (message.content === (prefix + "serverinfo")) {
