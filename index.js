@@ -106,7 +106,6 @@ client.on("message", (message) => {
  if (message.content.startsWith("!say")) {
    message.channel.sendMessage((message.author.username) + " says: " + (message.content.replace('!say ','')));
  };
- break;
  if (message.content === (prefix + "serverinfo")) {
     message.channel.send({embed: {
       color: 0xffff00,
