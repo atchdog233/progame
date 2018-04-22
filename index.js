@@ -111,7 +111,7 @@ client.on("message", (message) => {
     message.delete().catch(O_o=>{}); 
     // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
-  };
+  }
  } else
  if (message.content === (prefix + "serverinfo")) {
     message.channel.send({embed: {
