@@ -23,12 +23,6 @@ client.on("message", (message) => {
       }
     }});
   } else
-  if (message.content === (prefix + "say")) {
-  let text = args.slice(1).join(" ");
-   message.delete();
-   message.channel.send(text)
-  }
-  } else
   if (message.content === (prefix + "أنا ابن العاهرة")) {
     message.channel.send({embed: {
       color: 0xffff00,
@@ -156,6 +150,14 @@ client.on('message', message => {
   if (message.content === 'test') {
     message.reply("`/help` אני מחוברת, כדאי להתחיל תרשום");
   }
+});
+
+client.on('message', message => {
+  if (message.content === '/say') {
+   let text = args.slice(1).join(" ");
+   message.delete();
+   message.channel.send(text);
+ }
 });
 
 client.login(process.env.BOT_TOKEN);
