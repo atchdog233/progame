@@ -103,6 +103,15 @@ client.on("message", (message) => {
           message.reply("Invalid user."); //Reply with a mention saying "Invalid user."
     }
  } else
+ if(message.content.startsWith(prefix + "userinfo ")) { //IF for the command.
+     if(message.mentions.users.first()) { //Check if the message has a mention in it.
+           let user = message.mentions.users.first(); //Since message.mentions.users returns a collection; we must use the first() method to get the first in the collection.
+           let output = "UserInfo: \n** **\nUsername: " + user.username;
+           message.channel.sendMessage(output); //We send the output in the current channel.
+    } else {
+          message.reply("Invalid user."); //Reply with a mention saying "Invalid user."
+    }
+ } else
  if (message.content === (prefix + "serverinfo")) {
     message.channel.send({embed: {
       color: 0xffff00,
@@ -149,18 +158,6 @@ client.on('message', msg => {
 client.on('message', message => {
   if (message.content === 'test') {
     message.reply("`/help` אני מחוברת, כדאי להתחיל תרשום");
-  }
-});
-
-client.on("guildMemberAdd", (member) => {
-  const guild = member.guild;
-  if (!newUsers[guild.id]) newUsers[guild.id] = new Discord.Collection();
-  newUsers[guild.id].set(member.id, member.user);
-
-  if (newUsers[guild.id].size > 10) {
-    const userlist = newUsers[guild.id].map(u => u.toString()).join(" ");
-    guild.channels.get(guild.id).send("Welcome our new users!\n" + userlist);
-    newUsers[guild.id].clear();
   }
 });
 
