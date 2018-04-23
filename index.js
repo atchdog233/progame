@@ -106,7 +106,7 @@ client.on("message", (message) => {
  if(message.content.startsWith(prefix + "userinfo ")) { //IF for the command.
      if(message.mentions.users.first()) { //Check if the message has a mention in it.
            let user = message.mentions.users.first(); //Since message.mentions.users returns a collection; we must use the first() method to get the first in the collection.
-           let output = "UserInfo: \n** **\nUsername: " + user.username;
+           let output = "UserInfo: \n** **\nUsername: " + user.username + "/nJoinAt: " + user.joinAt;
            message.channel.sendMessage(output); //We send the output in the current channel.
     } else {
           message.reply("Invalid user."); //Reply with a mention saying "Invalid user."
@@ -151,6 +151,12 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content === '/avatar') {
+    msg.reply("You need to Mention User")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === '/userinfo') {
     msg.reply("You need to Mention User")
   }
 });
