@@ -17,12 +17,15 @@ client.on('message', (msg, message) => {
   if (msg.content === `${prefix}creator`) {
     msg.channel.send('**The creator is:**\n\nDerpy [MIG] ᴰᵉᵛ ⚒#6522');
   }
+  if (msg.content === `${prefix}invite`) {
+    msg.channel.send('**Invite the Bot:**\n\n<https://discordapp.com/oauth2/authorize?client_id=455134292817870848&permissions=8&scope=bot>');
+  }
   if (msg.content === `${prefix}help`) {
     const helpEmbed = new Discord.RichEmbed()
     .setTitle("Rainbow Bot Help Commands")
-    .setDescription(`${prefix}ping - check your ping\n${prefix}creator - check who is the creator`)
+    .setDescription(`${prefix}ping - check your ping\n${prefix}creator - check who is the creator\n${prefix}invite - Invite the Bot`)
     .setColor("RANDOM")
-    .setFooter("Rainbow Bot by Derpy [MIG] ᴰᵉᵛ ⚒#6522");
+    .setFooter("Rainbow Bot by Derpy [MIG] ᴰᵉᵛ ⚒#6522 | [Invite the Bot](https://discordapp.com/oauth2/authorize?client_id=455134292817870848&permissions=8&scope=bot)");
      msg.channel.send(helpEmbed);
   }
 });
