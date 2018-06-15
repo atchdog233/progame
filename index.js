@@ -23,14 +23,14 @@ client.on('message', (msg, message) => {
     msg.channel.send('**The creator is:**\n\nDerpy [MIG] ᴰᵉᵛ \:hammer_pick:#6522');
   }
   if (msg.content === `${prefix}rainbow`) {
-  const rainbowrole = args[1]
-  if (!rainbowrole) return msg.channel.send("You need write a **role name** (role mention dont be accepted)")
+    if (args.length === 0)
+    return message.channel.send("You need write a **role name** (role mention dont be accepted)")
   let rainbowembed = new Discord.RichEmbed()
   .setTitle("Rainbow role Request")
   .setTimestamp()
   .addField('Username', message.author.toString())
   .addField('Server', `${message.guild.name}`)
-  .addField('Message', rainbowrole);
+  .addField('Message', args.join(" "));
   msg.delete()
   let str = "<@!311604263379795970>"; 
   let id = str.replace(/[<@!>]/g, '');
