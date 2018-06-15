@@ -24,7 +24,7 @@ client.on('message', (msg, message) => {
     const helpEmbed = new Discord.RichEmbed()
     .setTitle("Rainbow Bot Help Commands")
     .setDescription(`${prefix}ping - check your ping\n${prefix}creator - check who is the creator\n${prefix}invite - Invite the Bot`)
-    .addBlankField("[Invite the Bot](https://discordapp.com/oauth2/authorize?client_id=455134292817870848&permissions=8&scope=bot)")
+    .addField("Links", "[Invite the Bot](https://discordapp.com/oauth2/authorize?client_id=455134292817870848&permissions=8&scope=bot)")
     .setColor("RANDOM")
     .setFooter("Rainbow Bot by Derpy [MIG] ᴰᵉᵛ ⚒#6522");
      msg.channel.send(helpEmbed);
