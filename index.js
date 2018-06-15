@@ -9,6 +9,8 @@ client.user.setActivity(`=help | Created by Derpy`, {type: "PLAYING"});
         client.guilds.get('451055573103017984').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
     setInterval(function(){
         client.guilds.get('399256495876866058').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        client.guilds.get('454609290754392094').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
 });
 
 const prefix = "=";
