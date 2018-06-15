@@ -4,7 +4,8 @@ const client = new Discord.Client();
 client.on('ready', () => {
 client.user.setActivity(`=help | Created by Derpy`, {type: "PLAYING"});
     setInterval(function(){
-        client.roles.find('name', 'rainbow').edit({color: 'RANDOM'})
+        client.guilds.get('423115512579620865')
+        client.guilds.get('451055573103017984').roles.find('name', 'rainbow').edit({color: 'RANDOM'})
     },1000);
 });
 
