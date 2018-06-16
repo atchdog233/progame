@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const settings = require('./settings.json');
 const bot = new Discord.Client();
 
 bot.on('ready', () => {
@@ -17,7 +18,7 @@ bot.on("message", async (msg, message) => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return 
 
-  let prefix = "=";
+  let prefix = settings.prefix;
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
