@@ -1,8 +1,9 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+const prefix = "=";
 
 bot.on('ready', () => {
-bot.user.setActivity(`=help | Created by Derpy`, {type: "PLAYING"});
+bot.user.setActivity(`${prefix}help | Created by Derpy`, {type: "PLAYING"});
     setInterval(function(){
         bot.guilds.get('423115512579620865').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
     setInterval(function(){
@@ -16,8 +17,6 @@ bot.user.setActivity(`=help | Created by Derpy`, {type: "PLAYING"});
 bot.on("message", async (msg, message) => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return 
-
-  let prefix = "=";
 
   if (msg.content === `${prefix}ping`) {
     msg.reply('Pong!');
