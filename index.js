@@ -15,6 +15,37 @@ bot.user.setActivity(`${prefix}help | Created by Derpy`, {type: "PLAYING"});
         bot.guilds.get('454609290754392094').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
 });
 
+bot.on("guildCreate", guild => {
+  console.log(`The bot just joined to ${guild.name}, Owned by ${guild.owner.user.tag}`);
+  let str = "<@!311604263379795970>";
+  let id = str.replace(/[<@!>]/g, '');
+  let welcomejoinEmbed = new Discord.RichEmbed()
+  .setDescription("New Server Added")
+  .setTimestamp()
+  .addField('Server', `${guild.name}`)
+  .addField('Owner', `${guild.owner.user.tag}`)
+  .setFooter(`${bot.guilds.size} Servers`);
+
+  bot.fetchUser(id)
+  .then(user => {user.send(welcomejoinEmbed)});
+});
+
+bot.on("guildDelete", guild => {
+  console.log(`The bot has been left ${guild.name}, Owned by ${guild.owner.user.tag}`);
+  let str = "<@!311604263379795970>";
+  let id = str.replace(/[<@!>]/g, '');
+  let welcomeleaveEmbed = new Discord.RichEmbed()
+  .setDescription("Server Removed")
+  .setTimestamp()
+  .addField('Server', `${guild.name}`)
+  .addField('Owner', `${guild.owner.user.tag}`)
+  .setFooter(`${bot.guilds.size} Servers`);
+
+  bot.fetchUser(id)
+  .then(user => {user.send(welcomeleaveEmbed)})
+
+});
+
 bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return 
