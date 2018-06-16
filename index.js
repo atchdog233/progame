@@ -59,7 +59,7 @@ bot.on("message", async message => {
   if (!message.content.startsWith(prefix)) return;
 
   if (cmd === `${prefix}ping`) {
-    message.reply('Pong! `${Date.now() - message.createdTimestamp} ms`');
+    message.reply(`Pong! ${Date.now() - message.createdTimestamp} ms`);
   }
   if (cmd === `${prefix}creator`) {
     message.channel.send('**The creator is:**\n\n`Derpy [MIG] ᴰᵉᵛ ⚒#6522`');
