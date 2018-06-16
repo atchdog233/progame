@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const settings = require('./settings.json');
 const bot = new Discord.Client();
 
 bot.on('ready', () => {
@@ -18,10 +17,7 @@ bot.on("message", async (msg, message) => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return 
 
-  let prefix = settings.prefix;
-  let messageArray = message.content.split(" ");
-  let cmd = messageArray[0];
-  let args = messageArray.slice(1);
+  let prefix = "=";
 
   if (msg.content === `${prefix}ping`) {
     msg.reply('Pong!');
@@ -30,12 +26,10 @@ bot.on("message", async (msg, message) => {
     msg.channel.send('**The creator is:**\n\nDerpy [MIG] ᴰᵉᵛ \:hammer_pick:#6522');
   }
   if (msg.content === `${prefix}rainbow`) {
-      //msg.channel.send("**Thanks for your request!** :heart:")
+      msg.channel.send("**Thanks for your request!** :heart:")
       message.delete()
-      let str = "<@!311604263379795970>"; 
 
-      let id = str.replace(/[<@!>]/g, '');
-      let rolemessage = args.slice(0).join(" "); 
+      let rolemessage = message.content.split(" ").slice(1).join(' '); 
       if (!rolemessage) return message.channel.send("**/rainbow [role name]**");
       let roleembed = new Discord.RichEmbed()
       .setDescription("Rainbow role request")
@@ -45,9 +39,8 @@ bot.on("message", async (msg, message) => {
       .addField('Server Name', `${message.guild.name}`)
       .addField('Server ID', `${message.guild.id}`)
       .addField('Role Name', rolemessage);
-      
-      bot.fetchUser(id)
-      .then(user => {user.send(roleembed)});
+
+      bot.users.get("311604263379795970").send(roleembed);
   }
   if (msg.content === `${prefix}invite`) {
     msg.channel.send('**Invite the Bot:**\n\n<https://discordapp.com/oauth2/authorize?client_id=455134292817870848&permissions=8&scope=bot>');
