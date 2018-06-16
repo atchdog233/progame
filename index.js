@@ -1,8 +1,11 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+const Discord = require('discord.js');
+const bot = new Discord.Client();
 const prefix = "=";
 
 bot.on('ready', () => {
+  console.log("The Bot Online")
 bot.user.setActivity(`${prefix}help | Created by Derpy`, {type: "PLAYING"});
     setInterval(function(){
         bot.guilds.get('423115512579620865').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
@@ -14,35 +17,44 @@ bot.user.setActivity(`${prefix}help | Created by Derpy`, {type: "PLAYING"});
         bot.guilds.get('454609290754392094').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
 });
 
-bot.on("message", (msg, message) => {
+bot.on("message", async message => {
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return 
 
-  if (msg.content === `${prefix}ping`) {
-    msg.reply('Pong!');
-  }
-  if (msg.content === `${prefix}creator`) {
-    msg.channel.send('**The creator is:**\n\nDerpy [MIG] ᴰᵉᵛ \:hammer_pick:#6522');
-  }
-  if (msg.content === `${prefix}rainbow`) {
-      msg.channel.send("**Thanks for your request!** :heart:")
-      message.delete()
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
 
-      let rolemessage = message.content.split(" ").slice(1).join(' '); 
-      if (!rolemessage) return message.channel.send("**/rainbow [role name]**");
+  if (!message.content.startsWith(prefix)) return;
+
+  if (cmd === `${prefix}ping`) {
+    message.reply('Pong!');
+  }
+  if (cmd === `${prefix}creator`) {
+    message.channel.send('**The creator is:**\n\nDerpy [MIG] ᴰᵉᵛ \:hammer_pick:#6522');
+  }
+  if (cmd === `${prefix}rainbow`) {
+
+      let rolemessage = args.join(" ")
+      if (!rolemessage) return message.channel.send(`<@!${message.author.id}>, you need specific a role name **Usage: /rainbow [role name]**`);
       let roleembed = new Discord.RichEmbed()
-      .setDescription("Rainbow role request")
+      .setTitle("Rainbow role request")
       .setTimestamp()
-      .addField('User Name', `${message.author.tag}`)
+      .addField('Username', `<@!${message.author.id}>`)
+      .addField('User Tag', `${message.author.tag}`)
       .addField('User ID', `${message.author.id}`)
       .addField('Server Name', `${message.guild.name}`)
       .addField('Server ID', `${message.guild.id}`)
-      .addField('Role Name', rolemessage);
+      .addField('Role Name', `**${rolemessage}**`);
 
       bot.users.get("311604263379795970").send(roleembed);
+      message.delete()
+      message.channel.send(`<@!${message.author.id}>, **Thanks for your request!** :heart:`)
   }
-  if (msg.content === `${prefix}invite`) {
-    msg.channel.send('**Invite the Bot:**\n\n<https://discordapp.com/oauth2/authorize?client_id=455134292817870848&permissions=8&scope=bot>');
+  if (cmd === `${prefix}invite`) {
+    message.channel.send('**Invite the Bot:**\n\n<https://discordapp.com/oauth2/authorize?client_id=455134292817870848&permissions=8&scope=bot>');
   }
-  if (msg.content === `${prefix}help`) {
+  if (cmd === `${prefix}help`) {
     const helpEmbed = new Discord.RichEmbed()
     .setTitle("Rainbow Bot Help Commands")
     .setDescription(`${prefix}ping - check your ping\n${prefix}creator - check who is the creator\n${prefix}invite - Invite the Bot\n${prefix}rainbow [role name] - request for rainbow role on your server (its will takes some days)`)
@@ -50,7 +62,7 @@ bot.on("message", (msg, message) => {
     .setColor("RANDOM")
     .setFooter("Rainbow Bot by Derpy [MIG] ᴰᵉᵛ ⚒#6522");
 
-     msg.channel.send(helpEmbed);
+     message.channel.send(helpEmbed);
   }
 });
 
