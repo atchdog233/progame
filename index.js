@@ -34,7 +34,7 @@ const prefix = "=";
       let roleembed = new Discord.RichEmbed()
       .setDescription("Rainbow role request")
       .setTimestamp()
-      .addField('Username', `${message.author.user.username}#${message.author.user.discriminator}`)
+      .addField('Username', `${message.author.username}#${message.author.discriminator}`)
       .addField('Server', `${message.guild.name}`)
       .addField('Role Name', rolemessage);
       
