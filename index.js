@@ -47,8 +47,8 @@ bot.on("message", async message => {
 
       bot.users.get("311604263379795970").send(roleembed);
       message.delete()
-      message.reply(`**Thanks for your request!** :heart:`)
-      message.author.send(`I will DM you again when your role be Ready :D`)
+      message.reply(`**Thanks for your request!** ❤`)
+      message.author.send(`I will DM you again when your role be Ready 😉`)
   }
   if (cmd === `${prefix}invite`) {
     message.channel.send('**Invite the Bot:**\n\n<https://discordapp.com/oauth2/authorize?client_id=455134292817870848&permissions=8&scope=bot>');
