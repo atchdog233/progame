@@ -62,7 +62,7 @@ bot.on("message", async message => {
     message.reply('Pong!');
   }
   if (cmd === `${prefix}creator`) {
-    message.channel.send('**The creator is:**\n\nDerpy [MIG] ᴰᵉᵛ \:hammer_pick:#6522');
+    message.channel.send('**The creator is:**\n\n`Derpy [MIG] ᴰᵉᵛ \:hammer_pick:#6522`');
   }
   if (cmd === `${prefix}rainbow`) {
 
