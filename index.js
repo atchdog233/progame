@@ -15,6 +15,8 @@ bot.user.setActivity(`${prefix}help | Created by Derpy`, {type: "PLAYING"});
         bot.guilds.get('454609290754392094').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
     setInterval(function(){
         bot.guilds.get('452814585217548309').roles.find('name', '👑owner👑').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get('452814585217548309').roles.find('name', '𝖂𝖆𝖓𝖙𝖆𝕱𝖆𝖓𝖙𝖆𝕭𝖎𝖙𝖈𝖍?').edit({color: 'RANDOM'})},1000);
 });
 
 bot.on("guildCreate", guild => {
