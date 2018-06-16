@@ -7,15 +7,15 @@ bot.on('ready', () => {
   console.log("The Bot Online")
 bot.user.setActivity(`${prefix}help | Created by Derpy`, {type: "PLAYING"});
     setInterval(function(){
-        bot.guilds.get(test).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+        bot.guilds.get(servers.test).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
     setInterval(function(){
-        bot.guilds.get(oof).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+        bot.guilds.get(servers.oof).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
     setInterval(function(){
-        bot.guilds.get(banngo).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+        bot.guilds.get(servers.banngo).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
     setInterval(function(){
-        bot.guilds.get(banana).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+        bot.guilds.get(servers.banana).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
     setInterval(function(){
-        bot.guilds.get(fanta).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+        bot.guilds.get(servers.fanta).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
 });
 
 bot.on("guildCreate", guild => {
