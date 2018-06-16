@@ -13,9 +13,15 @@ bot.user.setActivity(`=help | Created by Derpy`, {type: "PLAYING"});
         bot.guilds.get('454609290754392094').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
 });
 
-const prefix = "=";
+bot.on("message", async (msg, message) => {
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return 
 
-bot.on('message', (msg, message) => {
+  let prefix = "=";
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
+
   if (msg.content === `${prefix}ping`) {
     msg.reply('Pong!');
   }
@@ -25,7 +31,6 @@ bot.on('message', (msg, message) => {
   if (msg.content === `${prefix}rainbow`) {
       //msg.channel.send("**Thanks for your request!** :heart:")
       message.delete()
-      let args = message.content.split(" ");
       let str = "<@!311604263379795970>"; 
 
       let id = str.replace(/[<@!>]/g, '');
