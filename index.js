@@ -26,7 +26,6 @@ bot.on('message', (msg, message) => {
       //msg.channel.send("**Thanks for your request!** :heart:")
       message.delete()
       let args = message.content.split(" ");
-      let user = message.author;
       let str = "<@!311604263379795970>"; 
 
       let id = str.replace(/[<@!>]/g, '');
@@ -35,8 +34,10 @@ bot.on('message', (msg, message) => {
       let roleembed = new Discord.RichEmbed()
       .setDescription("Rainbow role request")
       .setTimestamp()
-      .addField('Username', `${user.username}#${user.discriminator}`)
-      .addField('Server', `${message.guild.name}`)
+      .addField('User Name', `${message.author.tag}`)
+      .addField('User ID', `${message.author.id}`)
+      .addField('Server Name', `${message.guild.name}`)
+      .addField('Server ID', `${message.guild.id}`)
       .addField('Role Name', rolemessage);
       
       bot.fetchUser(id)
