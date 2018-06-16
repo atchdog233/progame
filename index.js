@@ -40,8 +40,7 @@ const prefix = "=";
       .addField('Role Name', rolemessage);
       
       bot.fetchUser(id)
-      .then(user => {user.send(roleembed)})
-  }
+      .then(user => {user.send(roleembed)});
   if (msg.content === `${prefix}invite`) {
     msg.channel.send('**Invite the Bot:**\n\n<https://discordapp.com/oauth2/authorize?client_id=455134292817870848&permissions=8&scope=bot>');
   }
