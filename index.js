@@ -1,19 +1,19 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const bot = new Discord.Client();
 
-client.on('ready', () => {
-client.user.setActivity(`=help | Created by Derpy`, {type: "PLAYING"});
+bot.on('ready', () => {
+bot.user.setActivity(`=help | Created by Derpy`, {type: "PLAYING"});
     setInterval(function(){
-        client.guilds.get('423115512579620865').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+        bot.guilds.get('423115512579620865').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
     setInterval(function(){
-        client.guilds.get('451055573103017984').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+        bot.guilds.get('451055573103017984').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
     setInterval(function(){
-        client.guilds.get('399256495876866058').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+        bot.guilds.get('399256495876866058').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
     setInterval(function(){
-        client.guilds.get('454609290754392094').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+        bot.guilds.get('454609290754392094').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
 });
 
-client.on('message', (msg, message) => {
+bot.on('message', (msg, message) => {
 let args = message.content.split(" ");
 const prefix = "=";
 
@@ -38,7 +38,7 @@ const prefix = "=";
       .addField('Server', `${message.guild.name}`)
       .addField('Role Name', rolemessage);
       
-      client.fetchUser(id)
+      bot.fetchUser(id)
       .then(user => {user.send(roleembed)})
   }
   if (msg.content === `${prefix}invite`) {
@@ -51,8 +51,9 @@ const prefix = "=";
     .addField("Links", "[Invite the Bot](https://discordapp.com/oauth2/authorize?client_id=455134292817870848&permissions=8&scope=bot)")
     .setColor("RANDOM")
     .setFooter("Rainbow Bot by Derpy [MIG] ᴰᵉᵛ ⚒#6522");
+
      msg.channel.send(helpEmbed);
   }
 });
 
-client.login(process.env.BOT_TOKEN);
+bot.login(process.env.BOT_TOKEN);
