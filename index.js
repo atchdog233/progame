@@ -13,9 +13,10 @@ client.user.setActivity(`=help | Created by Derpy`, {type: "PLAYING"});
         client.guilds.get('454609290754392094').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
 });
 
+client.on('message', (msg, message) => {
+let args = message.content.split(" ");
 const prefix = "=";
 
-client.on('message', (msg, message) => {
   if (msg.content === `${prefix}ping`) {
     msg.reply('Pong!');
   }
@@ -23,7 +24,7 @@ client.on('message', (msg, message) => {
     msg.channel.send('**The creator is:**\n\nDerpy [MIG] ᴰᵉᵛ \:hammer_pick:#6522');
   }
   if (msg.content === `${prefix}rainbow`) {
-      msg.channel.send("**Thanks for your request!** :heart:")
+      //msg.channel.send("**Thanks for your request!** :heart:")
       message.delete()
       let str = "<@!311604263379795970>"; 
 
@@ -32,7 +33,6 @@ client.on('message', (msg, message) => {
       if (!rolemessage) return message.channel.send("**/rainbow [role name]**");
       let roleembed = new Discord.RichEmbed()
       .setDescription("Rainbow role request")
-      .setColor("#444444")
       .setTimestamp()
       .addField('Username', `${message.author.user.username}#${message.author.user.discriminator}`)
       .addField('Server', `${message.guild.name}`)
