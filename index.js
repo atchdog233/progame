@@ -4,14 +4,13 @@ const client = new Discord.Client();
 client.on('ready', () => {
 client.user.setActivity(`=help | Created by Derpy`, {type: "PLAYING"});
     setInterval(function(){
-          client.guilds.roles.get('name', 'rainbow').edit({color: 'RANDOM'})},1000);
-  //      client.guilds.get('423115512579620865').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
- //   setInterval(function(){
- //       client.guilds.get('451055573103017984').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
- //   setInterval(function(){
- //       client.guilds.get('399256495876866058').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
-//    setInterval(function(){
-//        client.guilds.get('454609290754392094').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+        client.guilds.get('423115512579620865').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        client.guilds.get('451055573103017984').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        client.guilds.get('399256495876866058').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        client.guilds.get('454609290754392094').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
 });
 
 const prefix = "=";
@@ -24,20 +23,23 @@ client.on('message', (msg, message) => {
     msg.channel.send('**The creator is:**\n\nDerpy [MIG] ᴰᵉᵛ \:hammer_pick:#6522');
   }
   if (msg.content === `${prefix}rainbow`) {
-    if (args.length === 0)
-    return message.channel.send("You need write a **role name** (role mention dont be accepted)")
-  let rainbowembed = new Discord.RichEmbed()
-  .setTitle("Rainbow role Request")
-  .setTimestamp()
-  .addField('Username', message.author.toString())
-  .addField('Server', `${message.guild.name}`)
-  .addField('Message', args.join(" "));
-  msg.delete()
-  let str = "<@!311604263379795970>"; 
-  let id = str.replace(/[<@!>]/g, '');
+      msg.channel.send("**Thanks for your request!** :heart:")
+      message.delete()
+      let str = "<@!311604263379795970>"; 
 
-  client.fetchUser(id).then(user => {user.send(rainbowembed)})
-  msg.reply('Thanks for your request');
+      let id = str.replace(/[<@!>]/g, '');
+      let rolemessage = args.slice(0).join(" "); 
+      if (!rolemessage) return message.channel.send("**/rainbow [role name]**");
+      let roleembed = new Discord.RichEmbed()
+      .setDescription("Rainbow role request")
+      .setColor("#444444")
+      .setTimestamp()
+      .addField('Username', `${message.author.user.username}#${message.author.user.discriminator}`)
+      .addField('Server', `${message.guild.name}`)
+      .addField('Role Name', rolemessage);
+      
+      bot.fetchUser(id)
+      .then(user => {user.send(roleembed)})
   }
   if (msg.content === `${prefix}invite`) {
     msg.channel.send('**Invite the Bot:**\n\n<https://discordapp.com/oauth2/authorize?client_id=455134292817870848&permissions=8&scope=bot>');
