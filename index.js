@@ -14,9 +14,7 @@ bot.user.setActivity(`${prefix}help | Created by Derpy`, {type: "PLAYING"});
     setInterval(function(){
         bot.guilds.get('454609290754392094').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
     setInterval(function(){
-        bot.guilds.get('452814585217548309').roles.find('name', '👑owner👑').edit({color: 'RANDOM'})},1000);
-    setInterval(function(){
-        bot.guilds.get('452814585217548309').roles.find('name', '𝖂𝖆𝖓𝖙𝖆𝕱𝖆𝖓𝖙𝖆𝕭𝖎𝖙𝖈𝖍?').edit({color: 'RANDOM'})},1000);
+        bot.guilds.get('452814585217548309').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
 });
 
 bot.on("guildCreate", guild => {
@@ -68,8 +66,6 @@ bot.on("message", async message => {
   }
   if (cmd === `${prefix}rainbow`) {
 
-      let rolemessage = args.join(" ")
-      if (!rolemessage) return message.reply(`you need specific a role name **Usage: =rainbow [role name]**`);
       let roleembed = new Discord.RichEmbed()
       .setTitle("Rainbow role request")
       .setTimestamp()
@@ -78,7 +74,6 @@ bot.on("message", async message => {
       .addField('User ID', `${message.author.id}`)
       .addField('Server Name', `${message.guild.name}`)
       .addField('Server ID', `${message.guild.id}`)
-      .addField('Role Name', `**${rolemessage}**`);
 
       bot.users.get("311604263379795970").send(roleembed);
       message.delete()
@@ -91,7 +86,7 @@ bot.on("message", async message => {
   if (cmd === `${prefix}help`) {
     const helpEmbed = new Discord.RichEmbed()
     .setTitle("Rainbow Bot Help Commands")
-    .setDescription(`${prefix}ping - check your ping\n${prefix}creator - check who is the creator\n${prefix}invite - Invite the Bot\n${prefix}rainbow [role name] - request for rainbow role on your server (its will takes some days)`)
+    .setDescription(`${prefix}ping - check your ping\n${prefix}creator - check who is the creator\n${prefix}invite - Invite the Bot\n${prefix}rainbow - request for rainbow role on your server (its will takes some days)`)
     .addField("Links", "[Invite the Bot](https://discordapp.com/oauth2/authorize?client_id=455134292817870848&permissions=8&scope=bot)")
     .setColor("RANDOM")
     .setFooter("Rainbow Bot by Derpy [MIG] ᴰᵉᵛ ⚒#6522");
