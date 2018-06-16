@@ -38,7 +38,7 @@ const prefix = "=";
       .addField('Server', `${message.guild.name}`)
       .addField('Role Name', rolemessage);
       
-      bot.fetchUser(id)
+      client.fetchUser(id)
       .then(user => {user.send(roleembed)})
   }
   if (msg.content === `${prefix}invite`) {
