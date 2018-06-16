@@ -26,6 +26,7 @@ const prefix = "=";
   if (msg.content === `${prefix}rainbow`) {
       //msg.channel.send("**Thanks for your request!** :heart:")
       message.delete()
+      let user = message.author;
       let str = "<@!311604263379795970>"; 
 
       let id = str.replace(/[<@!>]/g, '');
@@ -34,7 +35,7 @@ const prefix = "=";
       let roleembed = new Discord.RichEmbed()
       .setDescription("Rainbow role request")
       .setTimestamp()
-      .addField('Username', `${message.author.username}#${message.author.discriminator}`)
+      .addField('Username', `${user.username}#${user.discriminator}`)
       .addField('Server', `${message.guild.name}`)
       .addField('Role Name', rolemessage);
       
