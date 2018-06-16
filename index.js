@@ -34,7 +34,7 @@ bot.on("message", async message => {
   if (cmd === `${prefix}rainbow`) {
 
       let rolemessage = args.join(" ")
-      if (!rolemessage) return message.channel.send(`<@!${message.author.id}>, you need specific a role name **Usage: /rainbow [role name]**`);
+      if (!rolemessage) return message.channel.send(`<@!${message.author.id}>, you need specific a role name **Usage: =rainbow [role name]**`);
       let roleembed = new Discord.RichEmbed()
       .setTitle("Rainbow role request")
       .setTimestamp()
@@ -48,6 +48,7 @@ bot.on("message", async message => {
       bot.users.get("311604263379795970").send(roleembed);
       message.delete()
       message.channel.send(`<@!${message.author.id}>, **Thanks for your request!** :heart:`)
+      message.reply(`I will DM you again when your role be Ready :D`)
   }
   if (cmd === `${prefix}invite`) {
     message.channel.send('**Invite the Bot:**\n\n<https://discordapp.com/oauth2/authorize?client_id=455134292817870848&permissions=8&scope=bot>');
