@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const prefix = "=";
+const servers = require("./servers.json");
 
 bot.on('ready', () => {
   console.log("The Bot Online")
