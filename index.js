@@ -14,9 +14,7 @@ bot.user.setActivity(`${prefix}help | Created by Derpy`, {type: "PLAYING"});
         bot.guilds.get('454609290754392094').roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
 });
 
-bot.on("message", async (msg, message) => {
-  if(message.author.bot) return;
-  if(message.channel.type === "dm") return 
+bot.on("message", (msg, message) => {
 
   if (msg.content === `${prefix}ping`) {
     msg.reply('Pong!');
