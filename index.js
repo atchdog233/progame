@@ -110,6 +110,9 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if (cmd === `${prefix}creator`) {
     message.channel.send('**The creator is:**\n\n`Derpy [MIG] ᴰᵉᵛ ⚒#6522`');
   }
+  if (cmd === `${prefix}servers`) {
+    message.channel.send(`I am on **${bot.guilds.size} servers**`);
+  }
   if (cmd === `${prefix}prefix`) {
   let currectprefixEmbed = new Discord.RichEmbed()
   .setColor("#FF9900")
