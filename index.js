@@ -131,6 +131,54 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if (cmd === `${prefix}invite`) {
     message.channel.send('**Invite the Bot:**\n\n<https://discordapp.com/oauth2/authorize?client_id=455134292817870848&permissions=8&scope=bot>');
   }
+if(cmd === `${prefix}dm`) { // s!dm <user> <message>
+  message.delete();
+  if(!message.member.hasPermission("ADMINISTRATOR")) {
+    let invalidPerms = new Discord.RichEmbed()
+    .setTitle("<:no2:457142868277067788> Invalid Permissions!")
+    .setDescription("You must have the Administrator permission!")
+    .setThumbnail(bot.user.icon)
+    .setColor("#ff0000");
+
+    return message.channel.send(invalidPerms).then(msg => msg.delete(5000));
+  }
+
+  if(!args.length > 1) {
+    let invalidArgs = new Discord.RichEmbed()
+    .setTitle("<:no2:457142868277067788> Invalid Arguments!")
+    .setDescription("Please tag a user and add a message")
+    .setThumbnail(bot.user.icon)
+    .setColor("#ff0000");
+
+   return message.channel.send(invalidArgs).then(msg => msg.delete(5000));
+  }
+   let user = message.mentions.users.first();
+
+   if(!user) {
+    let invalidUser = new Discord.RichEmbed()
+    .setTitle("<:no2:457142868277067788> Invalid User!")
+    .setDescription("Please tag a user!")
+    .setThumbnail(bot.user.icon)
+    .setColor("#ff0000");
+
+    return message.channel.send(invalidUser).then(msg => msg.delete(5000));
+   }
+
+   let thingtoSend = args.slice(1).join(" ");
+   if(!thingtoSend) {
+    let invalidMessage = new Discord.RichEmbed()
+    .setTitle("<:no2:457142868277067788> Invalid User!")
+    .setDescription("Please provide a message!")
+    .setThumbnail(bot.user.icon)
+    .setColor("#ff0000");
+
+    return message.channel.send(invalidMessage).then(msg => msg.delete(5000));
+   }
+
+   user.send(`Message from ${message.author} \n -------------------------- \n ${thingtoSend} \n --------------------------`);
+   console.log("DM Sent!");
+   message.channel.send(`DM has been sent to <@!${user.id}> :white_check_mark:`);
+  }
   if (cmd === `${prefix}help`) {
     const helpEmbed = new Discord.RichEmbed()
     .setTitle("Rainbow Bot Help Commands")
