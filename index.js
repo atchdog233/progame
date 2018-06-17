@@ -152,22 +152,22 @@ if(cmd === `${prefix}dm`) { // s!dm <user> <message>
 
    return message.channel.send(invalidArgs).then(msg => msg.delete(5000));
   }
-   let user = message.mentions.users.first();
+   let user = args.slice(1).join(" ");
 
    if(!user) {
     let invalidUser = new Discord.RichEmbed()
     .setTitle("<:no2:457142868277067788> Invalid User!")
-    .setDescription("Please tag a user!")
+    .setDescription("Please type a user ID!")
     .setThumbnail(bot.user.icon)
     .setColor("#ff0000");
 
     return message.channel.send(invalidUser).then(msg => msg.delete(5000));
    }
 
-   let thingtoSend = args.slice(1).join(" ");
+   let thingtoSend = args.slice(2).join(" ");
    if(!thingtoSend) {
     let invalidMessage = new Discord.RichEmbed()
-    .setTitle("<:no2:457142868277067788> Invalid User!")
+    .setTitle("<:no2:457142868277067788> Invalid User ID!")
     .setDescription("Please provide a message!")
     .setThumbnail(bot.user.icon)
     .setColor("#ff0000");
@@ -175,7 +175,7 @@ if(cmd === `${prefix}dm`) { // s!dm <user> <message>
     return message.channel.send(invalidMessage).then(msg => msg.delete(5000));
    }
 
-   user.send(`Message from ${message.author} \n -------------------------- \n ${thingtoSend} \n --------------------------`);
+   user.send(`${thingtoSend}`);
    console.log("DM Sent!");
    message.channel.send(`DM has been sent to <@!${user.id}> :white_check_mark:`);
   }
