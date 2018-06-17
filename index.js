@@ -127,8 +127,7 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
 
       bot.users.get("311604263379795970").send(roleembed);
       message.delete()
-      message.reply(`**Thanks for your request!** ❤ (its will take between 30m to 60m)`)
-      message.reply(`Check your DM 📫`)
+      message.reply(`**Thanks for your request!** ❤ (its will take between 30m to 60m)\n\nCheck your DM 📫`)
       message.author.send(`I will DM you again when your role be Ready 😉, for now please make sure you do the following things on this video:\n\nhttps://www.youtube.com/watch?v=e3G9YZ4DRss`)
   }
   if (cmd === `${prefix}invite`) {
