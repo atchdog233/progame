@@ -152,7 +152,7 @@ if(cmd === `${prefix}dm`) { // s!dm <user> <message>
 
    return message.channel.send(invalidArgs).then(msg => msg.delete(5000));
   }
-   let user = args.slice(1).join(" ");
+   let user = args[1]
 
    if(!user) {
     let invalidUser = new Discord.RichEmbed()
@@ -164,7 +164,7 @@ if(cmd === `${prefix}dm`) { // s!dm <user> <message>
     return message.channel.send(invalidUser).then(msg => msg.delete(5000));
    }
 
-   let thingtoSend = args.slice(2).join(" ");
+   let thingtoSend = args[2]
    if(!thingtoSend) {
     let invalidMessage = new Discord.RichEmbed()
     .setTitle("<:no2:457142868277067788> Invalid User ID!")
