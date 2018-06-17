@@ -46,6 +46,8 @@ bot.user.setActivity(`${prefix}help | Created by Derpy`, {type: "PLAYING"});
         bot.guilds.get(servers.niv).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
     setInterval(function(){
         bot.guilds.get("457892658208178176").roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get(servers.poke).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
 });
 
 bot.on("guildCreate", guild => {
