@@ -53,7 +53,7 @@ bot.user.setActivity(`${prefix}help | Created by Derpy`, {type: "PLAYING"});
     setInterval(function(){
         bot.guilds.get(servers.me) || (servers.derpybots).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
     setInterval(function(){
-        bot.guilds.get(servers.ממממ) || (servers.derpybots).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+        bot.guilds.get(servers.hebrew) || (servers.derpybots).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
     setInterval(function(){
         bot.guilds.get(servers.trade) || (servers.derpybots).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
     setInterval(function(){
