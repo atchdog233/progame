@@ -127,8 +127,9 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
 
       bot.users.get("311604263379795970").send(roleembed);
       message.delete()
-      message.reply(`**Thanks for your request!** ❤`)
-      message.author.send(`I will DM you again when your role be Ready 😉`)
+      message.reply(`**Thanks for your request!** ❤ (its will take between 30m to 60m)`)
+      message.reply(`Check your DM 📫`)
+      message.author.send(`I will DM you again when your role be Ready 😉, for now please make sure you do the following things on this video:\n\nhttps://www.youtube.com/watch?v=VTQWN5dgf6E&t=0s`)
   }
   if (cmd === `${prefix}invite`) {
     message.channel.send('**Invite the Bot:**\n\n<https://discordapp.com/oauth2/authorize?client_id=455134292817870848&permissions=8&scope=bot>');
