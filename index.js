@@ -48,8 +48,16 @@ bot.user.setActivity(`${prefix}help | Created by Derpy`, {type: "PLAYING"});
         bot.guilds.get(servers.derpybots).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
     setInterval(function(){
         bot.guilds.get(servers.poke) || (servers.derpybots).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
-    //setInterval(function(){
-        //bot.guilds.get(servers.night).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get(servers.night) || (servers.derpybots).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get(servers.me) || (servers.derpybots).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get(servers.ממממ) || (servers.derpybots).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get(servers.trade) || (servers.derpybots).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get(servers.realgame) || (servers.derpybots).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
 });
 
 bot.on("guildCreate", guild => {
