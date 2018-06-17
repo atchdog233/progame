@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const fs = require("fs"); 
 const bot = new Discord.Client();
-const prefix = "=";
+const prefix = botconfig.prefix;
 const servers = require("./servers.json");
 bot.commands = new Discord.Collection();
 let cooldown = new Set();
