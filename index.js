@@ -30,7 +30,7 @@ bot.on('ready', () => {
 bot.user.setActivity(`${prefix}help | Created by Derpy`, {type: "PLAYING"});
 
     setInterval(function(){
-        bot.guild.roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+        bot.guilds.roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
 });
 
 bot.on("guildCreate", guild => {
