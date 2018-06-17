@@ -135,7 +135,7 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
   }
 if(cmd === `${prefix}dm`) { // s!dm <user> <message>
   message.delete();
-  if (message.author.id !== ("440182142207655947")) {
+  if (message.author.id !== ("311604263379795970")) {
     let invalidPerms = new Discord.RichEmbed()
     .setTitle("<:no2:457142868277067788> You dont have permissions!")
     .setDescription("You are not the Owner of the bot!")
@@ -188,7 +188,7 @@ if(cmd === `${prefix}dm`) { // s!dm <user> <message>
   if (cmd === `${prefix}help`) {
     const helpEmbed = new Discord.RichEmbed()
     .setTitle("Rainbow Bot Help Commands")
-    .setDescription(`**${prefix}ping** - check your ping\n**${prefix}creator** - check who is the creator\n**${prefix}invite** - Invite the Bot\n**${prefix}rainbow** - request for rainbow role on your server (its will takes some days)\n**${prefix}prefix** - show the bot prefix on your server\n**${prefix}setprefix** - change the bot prefix on your server`)
+    .setDescription(`\🔸 = Bot Owner\n🔹 = Administrtor\n▫ = Everyone\\n\n🔸 **${prefix}dm [user] [message]** - DM a specific user\n▫ **${prefix}ping** - check your ping\n▫ **${prefix}creator** - check who is the creator\n▫ **${prefix}invite** - Invite the Bot\n▫ **${prefix}rainbow** - request for rainbow role on your server (its will takes some days)\n▫ **${prefix}prefix** - show the bot prefix on your server\n🔹 **${prefix}setprefix** - change the bot prefix on your server`)
     .addField("Links", "[Invite Rainbow Bot](https://discordapp.com/oauth2/authorize?client_id=455134292817870848&permissions=8&scope=bot) | [Invite Watchdog Bot](https://discordapp.com/oauth2/authorize?client_id=440182142207655947&permissions=8&scope=bot)")
     .setColor("RANDOM")
     .setFooter("Rainbow Bot by Derpy [MIG] ᴰᵉᵛ ⚒#6522");
