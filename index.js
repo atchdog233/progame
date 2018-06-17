@@ -101,8 +101,14 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
   }
   if (cmd === `${prefix}creator`) {
     message.channel.send('**The creator is:**\n\n`Derpy [MIG] ᴰᵉᵛ ⚒#6522`');
+  }
   if (cmd === `${prefix}prefix`) {
-    message.channel.send('**The creator is:**\n\n`Derpy [MIG] ᴰᵉᵛ ⚒#6522`');
+  let currectprefixEmbed = new Discord.RichEmbed()
+  .setColor("#FF9900")
+  .setTitle("Prefix")
+  .addField("Currect Prefix", `${prefix}`);
+
+    message.channel.send(currectprefixEmbed);
   }
   if (cmd === `${prefix}rainbow`) {
 
