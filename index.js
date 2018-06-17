@@ -29,7 +29,35 @@ bot.on('ready', () => {
   console.log("The Bot Online")
 bot.user.setActivity(`${prefix}help | Created by Derpy`, {type: "PLAYING"});
     setInterval(function(){
-        bot.guilds.get((servers.derpybots) || (servers.test)).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+        bot.guilds.get(servers.test).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get(servers.oof).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get(servers.banngo).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get(servers.banana).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get(servers.fanta).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get(servers.programming).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get(servers.tiret).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get(servers.niv).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get(servers.derpybots).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get(servers.poke).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get(servers.night).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get(servers.me).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get(servers.hebrew).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get(servers.trade).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get(servers.realgame).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
 });
 
 bot.on("guildCreate", guild => {
