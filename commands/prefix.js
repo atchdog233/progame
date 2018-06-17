@@ -3,7 +3,7 @@ const fs = require("fs");
 
 module.exports.run = async (bot, message, args) => {
 
-  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
+  let prefixes = JSON.parse(fs.readFileSync("../prefixes.json", "utf8"));
   //let prefix = prefixes[message.guild.id].prefixes;
 
   //let currectprefixEmbed = new Discord.RichEmbed()
