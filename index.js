@@ -153,6 +153,7 @@ if(cmd === `${prefix}dm`) { // s!dm <user> <message>
    return message.channel.send(invalidArgs).then(msg => msg.delete(5000));
   }
    let user = args[0]
+   let member = <@!user>
 
    if(!user) {
     let invalidUser = new Discord.RichEmbed()
@@ -175,9 +176,9 @@ if(cmd === `${prefix}dm`) { // s!dm <user> <message>
     return message.channel.send(invalidMessage).then(msg => msg.delete(5000));
    }
 
-   user.send(`${thingtoSend}`);
+   member.send(`${thingtoSend}`);
    console.log("DM Sent!");
-   message.channel.send(`DM has been sent to <@!${user.id}> :white_check_mark:`);
+   message.channel.send(`DM has been sent to <@!${user}> :white_check_mark:`);
   }
   if (cmd === `${prefix}help`) {
     const helpEmbed = new Discord.RichEmbed()
