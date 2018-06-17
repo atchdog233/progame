@@ -29,7 +29,7 @@ bot.on('ready', () => {
   console.log("The Bot Online")
 bot.user.setActivity(`${prefix}help | Created by Derpy`, {type: "PLAYING"});
     setInterval(function(){
-        bot.guilds.get(servers.test) || (servers.derpybots).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+        bot.guilds.get(servers.test || servers.derpybots).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
     setInterval(function(){
         bot.guilds.get(servers.oof) || (servers.derpybots).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
     setInterval(function(){
