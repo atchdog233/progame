@@ -16,6 +16,8 @@ bot.user.setActivity(`${prefix}help | Created by Derpy`, {type: "PLAYING"});
         bot.guilds.get(servers.banana).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
     setInterval(function(){
         bot.guilds.get(servers.fanta).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    setInterval(function(){
+        bot.guilds.get(servers.programming).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
 });
 
 bot.on("guildCreate", guild => {
