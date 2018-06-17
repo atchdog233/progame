@@ -135,10 +135,10 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
   }
 if(cmd === `${prefix}dm`) { // s!dm <user> <message>
   message.delete();
-  if(!message.member.hasPermission("ADMINISTRATOR")) {
+  if (message.author.id !== ("440182142207655947")) {
     let invalidPerms = new Discord.RichEmbed()
-    .setTitle("<:no2:457142868277067788> Invalid Permissions!")
-    .setDescription("You must have the Administrator permission!")
+    .setTitle("<:no2:457142868277067788> You dont have permissions!")
+    .setDescription("You are not the Owner of the bot!")
     .setThumbnail(bot.user.icon)
     .setColor("#ff0000");
 
