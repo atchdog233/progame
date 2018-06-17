@@ -28,8 +28,9 @@ fs.readdir("./commands/", (err, files) => {
 bot.on('ready', () => {
   console.log("The Bot Online")
 bot.user.setActivity(`${prefix}help | Created by Derpy`, {type: "PLAYING"});
+let rainbowserver = bot.guilds.get(servers.derpybots) || bot.guilds.get(servers.test);
     setInterval(function(){
-        bot.guilds.get(servers.derpybots || servers.test).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+        rainbowserver.roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
 });
 
 bot.on("guildCreate", guild => {
