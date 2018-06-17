@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
     if (err) console.log(err)
   });
 
-  if(!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send("<:no2:457142868277067788> You dont have the Permission `MANAGE_SERVER`");
+  if(!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send("You dont have the Permission `MANAGE_SERVER`");
 
   let changeprefixEmbed = new Discord.RichEmbed()
   .setColor("#FF9900")
