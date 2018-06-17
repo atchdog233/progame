@@ -154,6 +154,9 @@ if(cmd === `${prefix}dm`) { // s!dm <user> <message>
   }
    let user = args[0]
 
+   let str = "<@!+user+>";
+   let id = str.replace(/[<@!>]/g, '');
+
    if(!user) {
     let invalidUser = new Discord.RichEmbed()
     .setTitle("<:no2:457142868277067788> Invalid User!")
@@ -175,7 +178,8 @@ if(cmd === `${prefix}dm`) { // s!dm <user> <message>
     return message.channel.send(invalidMessage).then(msg => msg.delete(5000));
    }
 
-   user.send(`${thingtoSend}`);
+   bot.fetchUser(id)
+  .then(user => {user.send(thingtoSend)})
    console.log("DM Sent!");
    message.channel.send(`DM has been sent to <@!${user}> :white_check_mark:`);
   }
