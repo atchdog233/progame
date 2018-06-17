@@ -154,7 +154,7 @@ if(cmd === `${prefix}dm`) { // s!dm <user> <message>
   }
    let user = args[0]
 
-   let str = "<@!+user+>";
+   let str = "<@!"+user+">";
    let id = str.replace(/[<@!>]/g, '');
 
    if(!user) {
