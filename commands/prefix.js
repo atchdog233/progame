@@ -28,7 +28,7 @@ module.exports.run = async (bot, message, args) => {
   .setTitle("Prefix")
   .addField("Change to", `${args[0]}`);
 
-  message.channel.send(changeprefixEmbed);
+  message.channel.send("Prefix has been changed to `"+`${args[0]}`+"`");
 
 }
 
