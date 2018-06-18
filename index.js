@@ -88,7 +88,7 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if (cmd === `${prefix}ping`) {
     message.channel.send("Pong! `"+`${Date.now() - message.createdTimestamp} ms`+"`");
   }
-  if (cmd ===`${prefix}test`) {
+  if (cmd ===`test`) {
   if (message.author.id !== ("311604263379795970")) return message.channel.send("You are not the Owner of the Bot")
    message.channel.send("I am Online")
   }
