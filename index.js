@@ -88,6 +88,10 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if (cmd === `${prefix}ping`) {
     message.channel.send("Pong! `"+`${Date.now() - message.createdTimestamp} ms`+"`");
   }
+  if (cmd ===`${prefix}test`) {
+  if (message.author.id !== ("311604263379795970")) return message.channel.send("You are not the Owner of the Bot")
+   message.channel.send("I am Online")
+  }
   if (cmd === `${prefix}creator`) {
     message.channel.send('**The creator is:**\n\n`Derpy [MIG] ᴰᵉᵛ ⚒#6522`');
   }
@@ -173,7 +177,7 @@ if(cmd === `${prefix}dm`) { // s!dm <user> <message>
    bot.fetchUser(id)
   .then(user => {user.send(thingtoSend)})
    console.log("DM Sent!");
-   message.channel.send(`DM has been sent to <@!${user}> :white_check_mark:`);
+   message.channel.send(`<:yes2:457142868222672907> DM has been sent to <@!${user}>`);
   }
   if (cmd === `${prefix}help`) {
     const helpEmbed = new Discord.RichEmbed()
