@@ -29,8 +29,8 @@ bot.on('ready', () => {
   console.log("The Bot Online")
 bot.user.setActivity(`${prefix}help | Created by Derpy`, {type: "PLAYING"});
 
-    setInterval(function(){
-        bot.guilds.get(servers.derpybots).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
+    //setInterval(function(){
+        //bot.guilds.get(servers.derpybots).roles.find('name', 'rainbow').edit({color: 'RANDOM'})},1000);
 });
 
 bot.on("guildCreate", guild => {
@@ -113,10 +113,12 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
       .addField('Server Name', `${message.guild.name}`)
       .addField('Server ID', `${message.guild.id}`)
 
-      bot.users.get("311604263379795970").send(roleembed);
-      message.delete()
-      message.reply(`**Thanks for your request!** ❤ (its will take between 30m to 60m to be Ready)\n\nCheck your DM 📫`)
-      message.author.send(`I will DM you again when your role be Ready 😉, for now please make sure you do the following things on this video:\n\nhttps://www.youtube.com/watch?v=e3G9YZ4DRss`)
+       message.channel.send("<:no2:457142868277067788> This command has been Disable")
+
+      //bot.users.get("311604263379795970").send(roleembed);
+      //message.delete()
+      //message.reply(`**Thanks for your request!** ❤ (its will take between 30m to 60m to be Ready)\n\nCheck your DM 📫`)
+      //message.author.send(`I will DM you again when your role be Ready 😉, for now please make sure you do the following things on this video:\n\nhttps://www.youtube.com/watch?v=e3G9YZ4DRss`)
   }
   if (cmd === `${prefix}invite`) {
     message.channel.send('**Invite the Bot:**\n\n<https://discordapp.com/oauth2/authorize?client_id=455134292817870848&permissions=8&scope=bot>');
