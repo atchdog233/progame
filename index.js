@@ -100,7 +100,7 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
   .setTitle("Prefix")
   .addField("Currect Prefix", `${prefix}`);
 
-    message.channel.send(currectprefixEmbed);
+    message.channel.send("Curret Prefix is `"+`${prefix}`+"`");
   }
   if (cmd === `${prefix}rainbow`) {
 
