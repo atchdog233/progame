@@ -17,6 +17,7 @@ module.exports.run = async (bot, message, args) => {
     message.delete()
 
     message.guild.member(member).ban(kReason);
+}
 
 module.exports.help = {
   name:"ban"
