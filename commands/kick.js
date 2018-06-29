@@ -1,8 +1,4 @@
 const Discord = require("discord.js");
-const errors = require("../utils/errors.js");
-const Color = require("../Color.json");
-const ID = require("../ID.json");
-const Emoji = require("../Emoji.json");
 
 module.exports.run = async (bot, message, args) => {
 
