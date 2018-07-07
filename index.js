@@ -88,9 +88,9 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if (cmd === `${prefix}ping`) {
     message.channel.send("Pong! `"+`${Date.now() - message.createdTimestamp} ms`+"`");
   }
-  if (cmd ===`test`) {
-  if (message.author.id !== ("311604263379795970")) return message.channel.send("You are not the Owner of the Bot")
-   message.channel.send("I am Online")
+  if (cmd === `test`) {
+    if (message.author.id !== ("311604263379795970")) return;
+    message.channel.send("**"+bot.user.username+"** is now online\non **"+bot.guilds.size+" servers!**\nand with **"+bot.channels.size+" channels!**\nand with **"+bot.users.size+" users!**\n\nmy creator is: `Derpy [FG] ᴰᵉᵛ ⚒#6522`")
   }
   if (cmd === `${prefix}creator`) {
     message.channel.send('**The creator is:**\n\n`Derpy [MIG] ᴰᵉᵛ ⚒#6522`');
