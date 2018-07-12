@@ -4,6 +4,7 @@ const bot = new Discord.Client();
 const botconfig = require('./botconfig.json');
 const prefix = botconfig.prefix;
 const servers = require("./servers.json");
+const antispam = require("./antispam.js")
 bot.commands = new Discord.Collection();
 let cooldown = new Set();
 let cdseconds = 5;  
