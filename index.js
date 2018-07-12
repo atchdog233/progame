@@ -18,7 +18,7 @@ bot.on("message", async message => {
   let command = message.content.split(' ').slice(0).join(' ')
 
   if (cmd === `${prefix}ping`) {
-    message.channel.send("`"+`${bot.ping}`+"`ms :רמת הפינג שלך הוא");
+    message.channel.send("`"+`${bot.ping}`+"`ms :הפינג שלך הוא");
   }
   if (cmd === `${prefix}setgame`) {
   if(!message.member.hasPermission("MANAGE_GUILD"))
@@ -33,7 +33,7 @@ bot.on("message", async message => {
   message.channel.send("משחק הבוט שונה חזרה למשחק הרגיל")
   }
   if (cmd === `${prefix}credit`) {
-    message.channel.send('**יוצר הבוט הוא:**\n\n`Derpy [MIG] ᴰᵉᵛ ⚒#6522`');
+    message.channel.send('**:יוצר הבוט הוא**\n\n`Derpy [MIG] ᴰᵉᵛ ⚒#6522`');
   }
   if (cmd === `${prefix}help`) {
   if(args[0] == "Moderation") {
