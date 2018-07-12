@@ -24,7 +24,7 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on('ready', () => {
   console.log("The Bot Online")
-var games = ["ProGame Israel Community Bot", "Created by Derpy [FG] ᴰᵉᵛ ⚒#6522", `.help | ${bot.guilds.size} Servers`, `.help | ${bot.users.size} Users`, `.help | ${bot.channels.size} Channels`];
+var games = ["ProGame Israel Community", "Created by Derpy [FG] ᴰᵉᵛ ⚒#6522", `.help | ${bot.guilds.size} Servers`, `.help | ${bot.users.size} Users`, `.help | ${bot.channels.size} Channels`];
 //bot.user.setActivity(`${games}`, {type: "PLAYING"});
     setInterval(function() {
         bot.user.setActivity(`${games[~~(Math.random() * games.length)]}`, { type: "PLAYING"});
