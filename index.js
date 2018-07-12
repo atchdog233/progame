@@ -33,7 +33,7 @@ bot.on("message", async message => {
       message.channel.send("אתה לא יכול לעשות את זה על השחקן הזה");
     }
     let reason = message.content.split(' ').slice(1).join(' ');
-    if(!reason) return message.channel.send("תוודא שרשמת סיבה")
+    if(!reason) return message.channel.send("תוודא שכתבת סיבה")
 
     message.delete().catch(O_o=>{});
 
@@ -42,7 +42,7 @@ bot.on("message", async message => {
     .setColor("RANDOM")
     .addField("משתמש", `${member}`,true)
     .addField("צוות", `${message.author}`,true)
-    .addField("סיבה", rreason,true)
+    .addField("סיבה", reason,true)
     .setTimestamp()
     .setFooter(`${bot.user.username}`);
 
