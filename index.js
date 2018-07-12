@@ -9,7 +9,7 @@ var games = ["ProGame Israel Community", "Created by Derpy [FG] ᴰᵉᵛ ⚒#65
 //bot.user.setActivity(`${games}`, {type: "PLAYING"});
     setInterval(function() {
         bot.user.setActivity(`${games[~~(Math.random() * games.length)]}`, { type: "PLAYING"});
-    }, 100000);
+    }, 10000);
 });
 
 bot.on("message", async message => {
