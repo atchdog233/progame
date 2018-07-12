@@ -56,7 +56,7 @@ bot.on("message", async message => {
   }
     const embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Help Commands")
-    .setDescription("\n**שימוש:**\n.help <קטגוריה>\n\n**__קטגוריות:__**\n\n**Moderation**\n**Fun**\n**Other**")
+    .setDescription("\n**שימוש:**\n.help <קטגוריה>\n\n**__:קטגוריות__**\n\n**Moderation**\n**Fun**\n**Other**")
     .setColor("RANDOM")
     .setTimestamp()
     .setFooter(`${bot.user.username}`);
