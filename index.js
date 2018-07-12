@@ -22,9 +22,11 @@ bot.on("message", async message => {
   }
   if (cmd === `${prefix}setgame`) {
   bot.user.setGame(message.content.split(' ').slice(1).join(' '));
+  message.channel.send("The Bot game has been changed to`"+message.content.split(' ').slice(1).join(' ')+"` by: "+message.author)
   }
   if (cmd === `${prefix}resetgame`) {
   bot.user.setGame(`${prefix}help | ProGame Israel Community`);
+  message.channel.send("The Bot game has been reset to Default")
   }
   if (cmd === `${prefix}credit`) {
     message.channel.send('**The creator is:**\n\n`Derpy [MIG] ᴰᵉᵛ ⚒#6522`');
