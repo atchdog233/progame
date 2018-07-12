@@ -15,9 +15,10 @@ bot.on("message", async message => {
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
+  let command = message.content.split(' ').slice(0).join(' ')
 
   if (cmd === `${prefix}ping`) {
-    message.channel.send("Pong! `"+`${bot.ping}.999999ms`+"`");
+    message.channel.send("Pong! `"+`${bot.ping}.999999 ms`+"`");
   }
   if (cmd === `${prefix}credit`) {
     message.channel.send('**The creator is:**\n\n`Derpy [MIG] ᴰᵉᵛ ⚒#6522`');
@@ -41,16 +42,12 @@ bot.on("message", async message => {
     message.channel.send(embed)
     return;
   }
-  if(!args[0] == "Other" || "Fun" || "Moderation" || "") {
-    message.channel.send("**This Catagory not Found!**")
-    return;
-  }
     const embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Help Commands")
     .setDescription("\n**Usage:**\n.help <catagory>\n\n**__Catagories:__**\n\n**Moderation**\n**Fun**\n**Other**")
     .setColor("RANDOM")
     .setTimestamp()
-    .setFooter(`${bot.user.username} ${bot.displayAvatarURL}`);
+    .setFooter(`${bot.user.username}`);
 
      message.channel.send(embed);
   }
