@@ -5,7 +5,7 @@ let prefix = botconfig.prefix
 
 bot.on('ready', () => {
   console.log("The Bot Online")
-bot.user.setActivity(`ProGame Israel Community | ${prefix}help`, { type: "PLAYING"});
+bot.user.setActivity(`${prefix}help | ProGame Israel Community`, { type: "PLAYING"});
 });
 
 bot.on("message", async message => {
