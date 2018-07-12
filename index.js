@@ -88,6 +88,14 @@ var type = 'ממבר';
 		.addField("הרולים של השחקן", `${member.roles.filter(r => r.id !== message.guild.id).map(roles => `<@&${roles.id}>`).join(" ") || "לשחקן אין שום רול"}`)
      message.channel.send({embed})
   }
+  if (cmd === `${prefix}clear`) {
+    if(!args[0]) return message.channel.send("תוודא שרשמת את כמות ההודעות שאתה רוצה למחוק");
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) 
+  if (message.author.id !== ("311604263379795970")) return message.channel.send("אין לך מספיק גישות לבצע את הפקודה הבאה");
+  message.channel.bulkDelete(args[0]).then(() => {
+    message.channel.send(`ניקה ${args[0]} הודעות.`).then(msg => msg.delete(5000));
+  });
+  }
   if (cmd === `${prefix}avatar`) {
   var member = message.mentions.users.first();
   var x5bzm;
