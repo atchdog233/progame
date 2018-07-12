@@ -33,7 +33,7 @@ bot.on("message", async message => {
     .addField("מספר בוטים", `${message.guild.members.filter(member => member.user.bot).size}` || "I not find any bot")
     .addField("מספר רולים", message.guild.roles.size || "Server has no roles")
     .addField("השרת נוצר ב", `${message.guild.createdAt}`)
-    .addField("אתה הצטרפת לשרת ב", `${message.author.joinedAt}`);
+    .addField("אתה הצטרפת לשרת ב", `${message.member.joinedAt}`);
 
     message.channel.send(embed);
   }
