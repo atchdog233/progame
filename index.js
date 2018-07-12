@@ -93,7 +93,15 @@ var type = 'ממבר';
   if(!message.member.hasPermission("MANAGE_MESSAGES")) 
   if (message.author.id !== ("311604263379795970")) return message.channel.send("אין לך מספיק גישות לבצע את הפקודה הבאה");
   message.channel.bulkDelete(args[0]).then(() => {
-    message.channel.send(`ניקה ${args[0]} הודעות.`).then(msg => msg.delete(5000));
+    message.channel.send(`ניקה ${args[0]} הודעות`).then(msg => msg.delete(5000));
+  });
+  }
+  if (cmd === `${prefix}purge`) {
+    if(!args[0]) return message.channel.send("תוודא שרשמת את כמות ההודעות שאתה רוצה למחוק");
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) 
+  if (message.author.id !== ("311604263379795970")) return message.channel.send("אין לך מספיק גישות לבצע את הפקודה הבאה");
+  message.channel.bulkDelete(args[0]).then(() => {
+    message.channel.send(`ניקה ${args[0]} הודעות`).then(msg => msg.delete(5000));
   });
   }
   if (cmd === `${prefix}avatar`) {
@@ -131,11 +139,23 @@ var type = 'ממבר';
   if (cmd === `${prefix}help`) {
 
   if(args[0] == "Moderation") {
-    message.channel.send("**בקרוב**")
+    let embed = new Discord.RichEmbed()
+    .setTitle("ProGame Israel Community Moderation Commands")
+    .setDescription("`clear` `purge`")
+    .setColor("RANDOM")
+    .setTimestamp()
+    .setFooter(`${bot.user.username}`);
+    message.channel.send(embed)
     return;
   }
   if(args[0] == "moderation") {
-    message.channel.send("**בקרוב**")
+    let embed = new Discord.RichEmbed()
+    .setTitle("ProGame Israel Community Moderation Commands")
+    .setDescription("`clear` `purge`")
+    .setColor("RANDOM")
+    .setTimestamp()
+    .setFooter(`${bot.user.username}`);
+    message.channel.send(embed)
     return;
   }
    if(args[0] == "Fun") {
