@@ -5,7 +5,7 @@ let prefix = botconfig.prefix
 
 bot.on('ready', () => {
   console.log("The Bot Online")
-var games = ["ProGame Israel Community", "Created by Derpy", `${prefix}help | ${bot.guilds.size} Servers`];
+var games = [`ProGame Israel Community`, `Created by Derpy`, `${prefix}help | ${bot.guilds.size} Servers`];
     setInterval(function() {
 //        bot.user.setActivity(`${games[~~(Math.random() * games.length)]}`, { type: "PLAYING"});
         bot.user.setActivity(`${games}`, { type: "PLAYING"});
