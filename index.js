@@ -20,6 +20,27 @@ bot.on("message", async message => {
   if (cmd === `${prefix}ping`) {
     message.channel.send("`"+`${bot.ping}`+"`ms :הפינג שלך הוא");
   }
+  if (cmd === `${prefix}serverinfo`) {
+    let embed = new Discord.RichEmbed()
+    .setDescription("Server Information")
+    .setColor(`RANDOM`)
+    .setThumbnail(sicon)
+    .addField("Server Name", message.guild.name)
+    .addField("Server ID", `${message.guild.id}`)
+    .addField("Owner", message.guild.owner.user.tag)
+    .addField("Region", message.guild.region)
+    .addField("Members", `${message.guild.memberCount}`)
+    .addField("Users", `${message.guild.members.filter(member => !member.user.bot).size}`)
+    .addField("Bots", `${message.guild.members.filter(member => member.user.bot).size}` || "I not find any bot")
+    .addField("Roles", message.guild.roles.size || "Server has no roles")
+    .addField("Server Created", `${message.guild.createdAt}`)
+    .addField("You Joined", `${message.author.joinedAt}`);
+
+    message.channel.send(embed);
+  }
+  if (cmd === `${prefix}userinfo`) {
+
+  }
   if (cmd === `${prefix}avatar`) {
   var member = message.mentions.users.first();
   var x5bzm;
@@ -73,7 +94,7 @@ bot.on("message", async message => {
   if(args[0] == "Other") {
     let embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Other Commands")
-    .setDescription("`ping` `credit` `setgame` `resetgame`")
+    .setDescription("`ping` `credit` `setgame` `resetgame` `avatar`")
     .setColor("RANDOM")
     .setTimestamp()
     .setFooter(`${bot.user.username}`);
@@ -83,7 +104,7 @@ bot.on("message", async message => {
   if(args[0] == "other") {
     let embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Other Commands")
-    .setDescription("`ping` `credit` `setgame` `resetgame`")
+    .setDescription("`ping` `credit` `setgame` `resetgame` `avatar`")
     .setColor("RANDOM")
     .setTimestamp()
     .setFooter(`${bot.user.username}`);
