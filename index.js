@@ -22,8 +22,6 @@ fs.readdir("./commands/", (err, files) => {
     bot.commands.set(props.help.name, props);
   });
 
-});
-
 bot.on('ready', (message) => {
   console.log("The Bot Online")
 bot.user.setActivity(`${prefix}help | ProGame Israel Community`, { type: "PLAYING"});
