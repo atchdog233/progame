@@ -41,7 +41,15 @@ bot.on("message", async message => {
     message.channel.send("**בקרוב**")
     return;
   }
+  if(args[0] == "moderation") {
+    message.channel.send("**בקרוב**")
+    return;
+  }
    if(args[0] == "Fun") {
+    message.channel.send("**בקרוב**")
+    return;
+  }
+   if(args[0] == "fun") {
     message.channel.send("**בקרוב**")
     return;
   }
@@ -55,6 +63,17 @@ bot.on("message", async message => {
     message.channel.send(embed)
     return;
   }
+  if(args[0] == "other") {
+    let embed = new Discord.RichEmbed()
+    .setTitle("ProGame Israel Community Other Commands")
+    .setDescription("`ping` `credit` `setgame` `resetgame`")
+    .setColor("RANDOM")
+    .setTimestamp()
+    .setFooter(`${bot.user.username}`);
+    message.channel.send(embed)
+    return;
+  }
+
     const embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Help Commands")
     .setDescription("\n**שימוש:**\n.help <קטגוריה>\n\n**__:קטגוריות__**\n\n**Moderation**\n**Fun**\n**Other**")
