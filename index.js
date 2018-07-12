@@ -47,7 +47,7 @@ bot.on("message", async message => {
   if(args[0] == "Other") {
     let embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Other Commands")
-    .setDescription("`ping` `credit`")
+    .setDescription("`ping` `credit` `setgame` `resetgame`")
     .setColor("RANDOM")
     .setTimestamp()
     .setFooter(`${bot.user.username}`);
