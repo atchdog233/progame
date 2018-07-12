@@ -1,13 +1,15 @@
 const Discord = require('discord.js');
 const fs = require("fs"); 
+const ms = require("ms"); 
 const bot = new Discord.Client();
 const botconfig = require('./botconfig.json');
 const prefix = botconfig.prefix;
 const servers = require("./servers.json");
-const antispam = require("./antispam.js")
 bot.commands = new Discord.Collection();
 let cooldown = new Set();
 let cdseconds = 5;  
+var user = {};
+var warn = {}; 
 
 fs.readdir("./commands/", (err, files) => {
 
@@ -64,10 +66,9 @@ bot.on("guildDelete", guild => {
   .then(user => {user.send(welcomeleaveEmbed)})
 
 });
-
 bot.on("message", async message => {
   if(message.author.bot) return;
-  if(message.channel.type === "dm") return 
+  if(message.channel.type === "dm") return
 
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
   if(!prefixes[message.guild.id]){
@@ -106,6 +107,71 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
   .addField("Currect Prefix", `${prefix}`);
 
     message.channel.send("Curret Prefix is `"+`${prefix}`+"`");
+  }
+let muteRole1 = message.guild.roles.find("name", "Muted");
+     if (!muteRole1) return message.channel.send("make sure you created a `Muted` role");
+
+  if (message.author.id == client.user.id) return;
+  if(JSON.stringify(user).indexOf(message.author.id) == -1) {
+    user[message.author.id] = message.createdTimestamp;
+    return;
+  } else {
+    if (Date.now() - user[message.author.id] < 695){
+              message.author.delete
+
+      if (JSON.stringify(warn).indexOf(message.author.id) == -1) {
+        warn[message.author.id] = 1;
+      } else {
+        warn[message.author.id]++;
+        message.author.delete
+      }
+      if (warn[message.author.id] < 3) {
+        message.author.delete
+
+      }
+      delete user[message.author.id];
+              message.author.delete
+
+    } else {
+      delete user[message.author.id];
+              message.author.delete
+
+    }
+  }
+  if (warn[message.author.id] == 3) {		   
+     if (!message.channel.guild) return;
+             message.author.delete
+
+let muteRole1 = message.guild.roles.find("name", "Muted");
+     if (!muteRole1) return;
+    var guild = message.channel.guild;
+          var currentTime = new Date(),
+                   Year = currentTime.getFullYear(),
+            Month = currentTime.getMonth() + 1,
+            Day = currentTime.getDate(),
+hours = currentTime.getHours() + 3 ,
+            minutes = currentTime.getMinutes()+1,
+            seconds = currentTime.getSeconds();
+
+           if (!message.channel.guild) return;
+     if (!muteRole1) return;
+    var guild = message.channel.guild;
+    message.guild.members.get(message.author.id).addRole(muteRole1);
+    
+     var msg;
+        msg = parseInt();
+      
+      message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
+
+delete warn[message.author.id];
+    delete user[message.author.id];
+	const embed500 = new Discord.RichEmbed()
+     .setTitle(`Anti Spam`)
+      .setDescription("`\n\nName:\n"+`${message.author} | ${message.author.tag}`+"\n Got Muted because he Spam\n")
+      .setColor("c91616")
+    message.channel.send(embed500)
+     message.author.send("You got Muted becuse Spamming\nthe Mute will be finish on `"+Year +"/"+Month+"/"+Day+','+hours +':'+minutes+':'+seconds+"`")
+  
   }
     if (message.content.startsWith("#hack")) {
       if (message.author.bot) return
