@@ -18,30 +18,30 @@ bot.on("message", async message => {
   let command = message.content.split(' ').slice(0).join(' ')
 
   if (cmd === `${prefix}ping`) {
-    message.channel.send("Pong! `"+`${bot.ping}.999999 ms`+"`");
+    message.channel.send("רמת הפינג שלך הוא:`"+`${bot.ping}.999999 ms`+"`");
   }
   if (cmd === `${prefix}setgame`) {
   if(!message.member.hasPermission("MANAGE_GUILD"))
-  if (message.author.id !== ("311604263379795970")) return message.channel.send("You dont have the Permission `MANAGE_SERVER`");
+  if (message.author.id !== ("311604263379795970")) return message.channel.send("אין לך מספיק גישות לבצע את הפקודה הבאה");
   bot.user.setGame(message.content.split(' ').slice(1).join(' '));
-  message.channel.send("The Bot game has been changed to`"+message.content.split(' ').slice(1).join(' ')+"` by: "+message.author)
+  message.channel.send("משחק הבוט שונה ל `"+message.content.split(' ').slice(1).join(' ')+"` על ידי: "+message.author)
   }
   if (cmd === `${prefix}resetgame`) {
   if(!message.member.hasPermission("MANAGE_GUILD"))
-  if (message.author.id !== ("311604263379795970")) return message.channel.send("You dont have the Permission `MANAGE_SERVER`");
+  if (message.author.id !== ("311604263379795970")) return message.channel.send("אין לך מספיק גישות לבצע את הפקודה הבאה");
   bot.user.setGame(`${prefix}help | ProGame Israel Community`);
-  message.channel.send("The Bot game has been reset to Default")
+  message.channel.send("משחק הבוט שונה חזרה למשחק הרגיל")
   }
   if (cmd === `${prefix}credit`) {
-    message.channel.send('**The creator is:**\n\n`Derpy [MIG] ᴰᵉᵛ ⚒#6522`');
+    message.channel.send('**יוצר הבוט הוא:**\n\n`Derpy [MIG] ᴰᵉᵛ ⚒#6522`');
   }
   if (cmd === `${prefix}help`) {
   if(args[0] == "Moderation") {
-    message.channel.send("**Soon**")
+    message.channel.send("**בקרוב**")
     return;
   }
    if(args[0] == "Fun") {
-    message.channel.send("**Soon**")
+    message.channel.send("**בקרוב**")
     return;
   }
   if(args[0] == "Other") {
@@ -50,13 +50,13 @@ bot.on("message", async message => {
     .setDescription("`ping` `credit`")
     .setColor("RANDOM")
     .setTimestamp()
-    .setFooter(`${bot.user.username} ${bot.displayAvatarURL}`);
+    .setFooter(`${bot.user.username}`);
     message.channel.send(embed)
     return;
   }
     const embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Help Commands")
-    .setDescription("\n**Usage:**\n.help <catagory>\n\n**__Catagories:__**\n\n**Moderation**\n**Fun**\n**Other**")
+    .setDescription("\n**שימוש:**\n.help <קטגוריה>\n\n**__קטגוריות:__**\n\n**Moderation**\n**Fun**\n**Other**")
     .setColor("RANDOM")
     .setTimestamp()
     .setFooter(`${bot.user.username}`);
