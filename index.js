@@ -18,13 +18,13 @@ bot.on("message", async message => {
   let command = message.content.split(' ').slice(0).join(' ')
 
   if (cmd === `${prefix}ping`) {
-    message.channel.send("`"+`${bot.ping}`+"` ms :רמת הפינג שלך הוא");
+    message.channel.send("`"+`${bot.ping}`+"`ms :רמת הפינג שלך הוא");
   }
   if (cmd === `${prefix}setgame`) {
   if(!message.member.hasPermission("MANAGE_GUILD"))
   if (message.author.id !== ("311604263379795970")) return message.channel.send("אין לך מספיק גישות לבצע את הפקודה הבאה");
   bot.user.setGame(message.content.split(' ').slice(1).join(' '));
-  message.channel.send("משחק הבוט שונה ל `"+message.content.split(' ').slice(1).join(' ')+"` על ידי: "+message.author)
+  message.channel.send("`"+message.content.split(' ').slice(1).join(' ')+"`הבוט עכשיו משחק ב\n"+message.author+ :"על ידי)
   }
   if (cmd === `${prefix}resetgame`) {
   if(!message.member.hasPermission("MANAGE_GUILD"))
