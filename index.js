@@ -25,7 +25,7 @@ bot.on("message", async message => {
   if (cmd === `${prefix}help`) {
     const embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Help Commands")
-    .setDescription("`ping` `credit` `help`")
+    .setDescription("\n** **\n** **\n**Usage:**\n.help <catagory>\n\n**__Catagories:__**\n\n**Moderation**\n\n**Fun**\n\n**Other**")
     .setColor("RANDOM")
     .setTimestamp()
     .setFooter(`${bot.user.username} ${bot.user.avatarDisplay}`);
