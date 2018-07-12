@@ -81,7 +81,7 @@ var type = 'ממבר';
 		.addField("של השחקן ID", `${user.id}`)
 		.addField("השם כינוי של השחקן", `${member.nickname !== null ? `${member.nickname}` : 'אין שם כינוי'}`)
         .addField("יצר את החשבון ב", `${user.createdAt}`)
-		.addField("הצטרף לשרת ב", `${user.joinedAt}`)
+		.addField("הצטרף לשרת ב", `${message.user.joinedAt}`)
 		.addField("סוג משתמש", `**`+type+`**`)
         .addField("סטטוס של השחקן", `${user.presence.status}`)
 		.addField("משחק של השחקן", `${user.presence.game ? user.presence.game.name : 'הוא כרגע לא משחק'}`)
