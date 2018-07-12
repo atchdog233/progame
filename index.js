@@ -27,13 +27,15 @@ bot.on("message", async message => {
     message.channel.send('**The creator is:**\n\n`Derpy [MIG] ᴰᵉᵛ ⚒#6522`');
   }
   if (cmd === `${prefix}help`) {
-    const helpEmbed = new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Help Commands")
-    .setDescription(`**${prefix}ping** - check your ping\n**${prefix}credit** - credits for the bot`)
+    .addField(`${prefix}ping`, `check your ping`)
+    .addField(`${prefix}credit`, `credits for the bot`)
+    .addField(`${prefix}help`, `show to you this menu`)
     .setColor("RANDOM")
     .setFooter("ProGame Israel Community bot by Derpy [MIG] ᴰᵉᵛ ⚒#6522");
 
-     message.channel.send(helpEmbed);
+     message.channel.send(embed);
   }
 });
 
