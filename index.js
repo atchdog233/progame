@@ -150,7 +150,7 @@ var type = 'ממבר';
 
     message.delete().catch(O_o=>{});
 
-    let embed = new Discord.RichEmbed()
+    let wembed = new Discord.RichEmbed()
     .setDescription("אזהרה")
     .setColor("RANDOM")
     .addField("משתמש", `${member}`,true)
@@ -165,7 +165,7 @@ var type = 'ממבר';
     message.delete().catch(O_o=>{});
     //warnschannel.send(embed);
     message.channel.send(`**${member.user.username}#${member.user.discriminator} קיבל אזהרה**`);
-    message.member.send(embed)
+    message.member.send(wembed)
   }
   if (cmd === `${prefix}resetgame`) {
   if(!message.member.hasPermission("MANAGE_GUILD"))
