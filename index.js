@@ -21,7 +21,21 @@ bot.on("message", async message => {
     message.channel.send("`"+`${bot.ping}`+"`ms :הפינג שלך הוא");
   }
   if (cmd === `${prefix}avatar`) {
-
+  var member = message.mentions.users.first();
+  var x5bzm;
+    if(!member) {
+    }
+    if(member){
+        var x5bzm = member;
+    } else {
+        var x5bzm = message.author;
+        
+    }
+      const embed = new Discord.RichEmbed()
+      .setColor(`RANDOM`)
+      .setTitle(`${x5bzm.username}#${x5bzm.discriminator}`)
+      .setImage(`${x5bzm.avatarURL}`)
+    message.channel.sendEmbed(embed);
   }
   if (cmd === `${prefix}setgame`) {
   if(!message.member.hasPermission("MANAGE_GUILD"))
