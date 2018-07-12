@@ -5,11 +5,9 @@ let prefix = botconfig.prefix
 
 bot.on('ready', () => {
   console.log("The Bot Online")
-var games = [`ProGame Israel Community`, `Created by Derpy`, `${prefix}help | ${bot.guilds.size} Servers`];
-    setInterval(function() {
-//        bot.user.setActivity(`${games[~~(Math.random() * games.length)]}`, { type: "PLAYING"});
+var games = `ProGame Israel Community | ${prefix}help`;
         bot.user.setActivity(`${games}`, { type: "PLAYING"});
-    }, 1000);
+    }, 5000);
 });
 
 bot.on("message", async message => {
