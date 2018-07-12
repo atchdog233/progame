@@ -1,7 +1,6 @@
 const ms = require("ms");
-
 const fs = require("fs");
-
+const Discord = require("discord.js")
 
 var user = {};
 var warn = {};
@@ -75,3 +74,4 @@ delete warn[message.author.id];
   
   }
 });
+client.login(process.env.BOT_TOKEN);
