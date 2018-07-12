@@ -41,7 +41,7 @@ bot.on("message", async message => {
     message.channel.send(embed)
     return;
   }
-  if(!args[0] == "Other" || "Fun" || "Moderation") {
+  if(!args[0] == "Other" || "Fun" || "Moderation" || "") {
     message.channel.send("**This Catagory not Found!**")
     return;
   }
