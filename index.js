@@ -3,8 +3,9 @@ const bot = new Discord.Client();
 const botconfig = require('./botconfig.json');
 let prefix = botconfig.prefix
 
-bot.on('ready', () => {
+bot.on('ready', (message) => {
   console.log("The Bot Online")
+let game = message.content.split(' ').slice(0).join(' ')
 bot.user.setActivity(`${prefix}help | ProGame Israel Community`, { type: "PLAYING"});
 });
 
@@ -19,6 +20,12 @@ bot.on("message", async message => {
 
   if (cmd === `${prefix}ping`) {
     message.channel.send("Pong! `"+`${bot.ping}.999999 ms`+"`");
+  }
+  if (cmd === `${prefix}setgame`) {
+  bot.user.setGame(message.content.split(' ').slice(0).join(' '));
+  }
+  if (cmd === `${prefix}resetgame`) {
+  bot.user.setGame(`${prefix}help | ProGame Israel Community`);
   }
   if (cmd === `${prefix}credit`) {
     message.channel.send('**The creator is:**\n\n`Derpy [MIG] ᴰᵉᵛ ⚒#6522`');
