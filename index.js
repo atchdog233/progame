@@ -46,13 +46,8 @@ bot.on("message", async message => {
     .setTimestamp()
     .setFooter(`${bot.user.username}`);
 
-    //let warnschannel = message.guild.channels.find(`name`, "mod-log");
-    //if(!warnschannel) return message.channel.send("Can't find channel called `mod-log`");
-
     message.delete().catch(O_o=>{});
-    //warnschannel.send(embed);
     message.channel.send(`**${member.user.username}#${member.user.discriminator} קיבל אזהרה**`);
-    message.member.send(embed)
   }
   if (cmd === `${prefix}serverinfo`) {
     let embed = new Discord.RichEmbed()
