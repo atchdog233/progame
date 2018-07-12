@@ -11,7 +11,6 @@ var games = ["ProGame Israel Community", "Created by Derpy [FG] ᴰᵉᵛ ⚒#65
     }, 100000);
 });
 
-});
 bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return
