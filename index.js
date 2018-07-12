@@ -133,40 +133,6 @@ var type = 'ממבר';
   bot.user.setGame(message.content.split(' ').slice(1).join(' '));
   message.channel.send("`"+message.content.split(' ').slice(1).join(' ')+"`הבוט עכשיו משחק ב")
   }
-  if (cmd === `${prefix}warn`) {
-    let member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!member) {
-    message.channel.send("תוודא שכתבת שם שחקן");
-    }
-    if(!message.member.hasPermission("MANAGE_MEMBERS"))
-    if (message.author.id !== ("311604263379795970")) {
-      message.channel.send("אין לך מספיק גישות לבצע את הפקודה הבאה");
-    }
-    if(member.hasPermission("MANAGE_MESSAGES")) {
-      message.channel.send("אתה לא יכול לעשות את זה על השחקן הזה");
-    }
-    let wreason = message.content.split(' ').slice(1).join(' ');
-    if(!wreason) return message.channel.send("תוודא שכתבת סיבה")
-
-    message.delete().catch(O_o=>{});
-
-    let wembed = new Discord.RichEmbed()
-    .setDescription("אזהרה")
-    .setColor("RANDOM")
-    .addField("משתמש", `${member}`)
-    .addField("צוות", `${message.author}`)
-    .addField("סיבה", wreason)
-    .setTimestamp()
-    .setFooter(`${bot.user.username}`);
-
-    //let warnschannel = message.guild.channels.find(`name`, "mod-log");
-    //if(!warnschannel) return message.channel.send("Can't find channel called `mod-log`");
-
-    message.delete().catch(O_o=>{});
-    //warnschannel.send(embed);
-    message.channel.send(`**${member.user.username}#${member.user.discriminator} קיבל אזהרה**`);
-    message.member.send(wembed)
-  }
   if (cmd === `${prefix}resetgame`) {
   if(!message.member.hasPermission("MANAGE_GUILD"))
   if (message.author.id !== ("311604263379795970")) return message.channel.send("אין לך מספיק גישות לבצע את הפקודה הבאה");
