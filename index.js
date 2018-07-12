@@ -28,7 +28,7 @@ bot.on("message", async message => {
     .setDescription("`ping` `credit` `help`")
     .setColor("RANDOM")
     .setTimestamp()
-    .setFooter(`${bot.user.username} ${bot.user.avatarURL}`);
+    .setFooter(`${bot.user.username} ${message.author.avatarURL}`);
 
      message.channel.send(embed);
   }
