@@ -24,10 +24,10 @@ bot.on("message", async message => {
   }
   if (cmd === `${prefix}help`) {
     const embed = new Discord.RichEmbed()
-    .setTitle("ProGame Israel Community Help Commands | Prefix: "+prefix)
-    .setDescription()
+    .setTitle("ProGame Israel Community Help Commands)
+    .setDescription("`ping` `credit` `help`")
     .setColor("RANDOM")
-    .setFooter(`${bot.user.name} ${bot.user.AvatarURL} | created by Derpy [MIG] ᴰᵉᵛ ⚒#6522`);
+    .setFooter(`${bot.user.username} ${bot.user.avatarURL} | created by Derpy [MIG] ᴰᵉᵛ ⚒#6522`);
 
      message.channel.send(embed);
   }
