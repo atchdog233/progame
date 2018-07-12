@@ -23,6 +23,24 @@ bot.on("message", async message => {
     message.channel.send('**The creator is:**\n\n`Derpy [MIG] ᴰᵉᵛ ⚒#6522`');
   }
   if (cmd === `${prefix}help`) {
+  if(args[0] == "Moderation") {
+    message.channel.send("**Soon**")
+    return;
+  }
+   if(args[0] == "Fun") {
+    message.channel.send("**Soon**")
+    return;
+  }
+  if(args[0] == "Other") {
+    let embed = new Discord.RichEmbed()
+    .setTitle("ProGame Israel Community Other Commands")
+    .setDescription("`ping` `credit`")
+    .setColor("RANDOM")
+    .setTimestamp()
+    .setFooter(`${bot.user.username} ${bot.displayAvatarURL}`);
+    message.channel.send(embed)
+    return;
+  }
     const embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Help Commands")
     .setDescription("\n**Usage:**\n.help <catagory>\n\n**__Catagories:__**\n\n**Moderation**\n**Fun**\n**Other**")
@@ -31,6 +49,8 @@ bot.on("message", async message => {
     .setFooter(`${bot.user.username} ${bot.displayAvatarURL}`);
 
      message.channel.send(embed);
+  } else {
+   message.channel.send("**This Catagory not Found**")
   }
 });
 
