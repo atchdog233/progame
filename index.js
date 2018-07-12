@@ -30,8 +30,8 @@ bot.on("message", async message => {
     .addField("איזור", message.guild.region)
     .addField("מספר שחקנים ובוטים", `${message.guild.memberCount}`)
     .addField("מספר שחקנים", `${message.guild.members.filter(member => !member.user.bot).size}`)
-    .addField("מספר בוטים", `${message.guild.members.filter(member => member.user.bot).size}` || "I not find any bot")
-    .addField("מספר רולים", message.guild.roles.size || "Server has no roles")
+    .addField("מספר בוטים", `${message.guild.members.filter(member => member.user.bot).size}` || "לא מצאתי שום בוט")
+    .addField("מספר רולים", message.guild.roles.size || "לשרת אין שום רול")
     .addField("השרת נוצר ב", `${message.guild.createdAt}`)
     .addField("אתה הצטרפת לשרת ב", `${message.member.joinedAt}`);
 
@@ -78,14 +78,14 @@ var type = 'ממבר';
     const embed = new Discord.RichEmbed()
 		.setColor(`RANDOM`)
 		.setTitle(`${user.username}#${user.discriminator}`)
-		.addField("של השחקן ID", `${user.id}`, true)
-		.addField("השם כינוי של השחקן", `${member.nickname !== null ? `${member.nickname}` : 'None'}`, true)
-        .addField("יצר את החשבון ב", `${createdAt.toFixed(0)} days ago`, true)
-		.addField("הצטרף לשרת ב", `${joinedAt.toFixed(0)} days ago`, true)
-		.addField("סוג משתמש", `**`+type+`**`, true)
-        .addField("סטטוס של השחקן", `${user.presence.status}`, true)
-		.addField("משחק של השחקן", `${user.presence.game ? user.presence.game.name : 'הוא כרגע לא משחק'}`, true)
-		.addField("הרולים של השחקן", `${member.roles.filter(r => r.id !== message.guild.id).map(roles => `<@&${roles.id}>`).join(" ") || "User has no roles"}`, true)
+		.addField("של השחקן ID", `${user.id}`)
+		.addField("השם כינוי של השחקן", `${member.nickname !== null ? `${member.nickname}` : 'אין שם כינוי'}`)
+        .addField("יצר את החשבון ב", `${user.createdAt}`)
+		.addField("הצטרף לשרת ב", `${user.joinedAt}`)
+		.addField("סוג משתמש", `**`+type+`**`)
+        .addField("סטטוס של השחקן", `${user.presence.status}`)
+		.addField("משחק של השחקן", `${user.presence.game ? user.presence.game.name : 'הוא כרגע לא משחק'}`)
+		.addField("הרולים של השחקן", `${member.roles.filter(r => r.id !== message.guild.id).map(roles => `<@&${roles.id}>`).join(" ") || "לשחקן אין שום רול"}`)
      message.channel.send({embed})
   }
   if (cmd === `${prefix}avatar`) {
@@ -141,7 +141,7 @@ var type = 'ממבר';
   if(args[0] == "Other") {
     let embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Other Commands")
-    .setDescription("`ping` `credit` `setgame` `resetgame` `avatar` `serverinfo`")
+    .setDescription("`ping` `credit` `setgame` `resetgame` `avatar` `serverinfo` `userinfo`")
     .setColor("RANDOM")
     .setTimestamp()
     .setFooter(`${bot.user.username}`);
@@ -151,7 +151,7 @@ var type = 'ממבר';
   if(args[0] == "other") {
     let embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Other Commands")
-    .setDescription("`ping` `credit` `setgame` `resetgame` `avatar` `serverinfo`")
+    .setDescription("`ping` `credit` `setgame` `resetgame` `avatar` `serverinfo` `userinfo`")
     .setColor("RANDOM")
     .setTimestamp()
     .setFooter(`${bot.user.username}`);
