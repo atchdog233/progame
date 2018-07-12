@@ -41,6 +41,10 @@ bot.on("message", async message => {
     message.channel.send(embed)
     return;
   }
+  if(!args[0] == "Other" || "Fun" || "Moderation") {
+    message.channel.send("**This Catagory not Found!**")
+    return;
+  }
     const embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Help Commands")
     .setDescription("\n**Usage:**\n.help <catagory>\n\n**__Catagories:__**\n\n**Moderation**\n**Fun**\n**Other**")
@@ -49,8 +53,6 @@ bot.on("message", async message => {
     .setFooter(`${bot.user.username} ${bot.displayAvatarURL}`);
 
      message.channel.send(embed);
-  } else {
-   message.channel.send("**This Catagory not Found**")
   }
 });
 
