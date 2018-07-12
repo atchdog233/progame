@@ -147,7 +147,7 @@ var type = 'ממבר';
   if(args[0] == "Moderation") {
     let embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Moderation Commands")
-    .setDescription("`warn` `clear` `purge`")
+    .setDescription("`clear` `purge`")
     .setColor("RANDOM")
     .setTimestamp()
     .setFooter(`${bot.user.username}`);
@@ -157,7 +157,7 @@ var type = 'ממבר';
   if(args[0] == "moderation") {
     let embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Moderation Commands")
-    .setDescription("`warn` `clear` `purge`")
+    .setDescription("`clear` `purge`")
     .setColor("RANDOM")
     .setTimestamp()
     .setFooter(`${bot.user.username}`);
