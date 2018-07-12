@@ -37,7 +37,7 @@ bot.on("message", async message => {
   }
   if (cmd === `${prefix}help`) {
 
-  if(args[0] == "Moderation" || "mod") {
+  if(args[0] == "Moderation" || "moderation") {
     message.channel.send("**בקרוב**")
     return;
   }
