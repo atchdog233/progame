@@ -145,17 +145,17 @@ var type = 'ממבר';
     if(member.hasPermission("MANAGE_MESSAGES")) {
       message.channel.send("אתה לא יכול לעשות את זה על השחקן הזה");
     }
-    let reason = message.content.split(' ').slice(1).join(' ');
-    if(!reason) return message.channel.send("תוודא שכתבת סיבה")
+    let wreason = message.content.split(' ').slice(1).join(' ');
+    if(!wreason) return message.channel.send("תוודא שכתבת סיבה")
 
     message.delete().catch(O_o=>{});
 
     let wembed = new Discord.RichEmbed()
     .setDescription("אזהרה")
     .setColor("RANDOM")
-    .addField("משתמש", `${member}`,true)
-    .addField("צוות", `${message.author}`,true)
-    .addField("סיבה", reason,true)
+    .addField("משתמש", `${member}`)
+    .addField("צוות", `${message.author}`)
+    .addField("סיבה", wreason)
     .setTimestamp()
     .setFooter(`${bot.user.username}`);
 
