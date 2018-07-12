@@ -36,15 +36,16 @@ bot.on("message", async message => {
     message.channel.send('**:יוצר הבוט הוא**\n\n`Derpy [MIG] ᴰᵉᵛ ⚒#6522`');
   }
   if (cmd === `${prefix}help`) {
-  if(args[0] == "Moderation") {
+
+  if(args[0] == "Moderation" || "mod") {
     message.channel.send("**בקרוב**")
     return;
   }
-   if(args[0] == "Fun") {
+   if(args[0] == "Fun" || "fun") {
     message.channel.send("**בקרוב**")
     return;
   }
-  if(args[0] == "Other") {
+  if(args[0] == "Other" || "other") {
     let embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Other Commands")
     .setDescription("`ping` `credit` `setgame` `resetgame`")
