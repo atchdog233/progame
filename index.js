@@ -27,7 +27,8 @@ bot.on("message", async message => {
     .setTitle("ProGame Israel Community Help Commands")
     .setDescription("`ping` `credit` `help`")
     .setColor("RANDOM")
-    .setFooter(`${bot.user.username} ${bot.avatarURL} | created by Derpy [MIG] ᴰᵉᵛ ⚒#6522`);
+    .setTimestamp()
+    .setFooter(`${bot.user.username} ${bot.user.avatarURL}`);
 
      message.channel.send(embed);
   }
