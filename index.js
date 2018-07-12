@@ -5,9 +5,7 @@ let prefix = botconfig.prefix
 
 bot.on('ready', () => {
   console.log("The Bot Online")
-var games = `ProGame Israel Community | ${prefix}help`;
-        bot.user.setActivity(`${games}`, { type: "PLAYING"});
-    }, 5000);
+bot.user.setActivity(`ProGame Israel Community | ${prefix}help`, { type: "PLAYING"});
 });
 
 bot.on("message", async message => {
