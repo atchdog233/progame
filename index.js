@@ -20,35 +20,6 @@ bot.on("message", async message => {
   if (cmd === `${prefix}ping`) {
     message.channel.send("`"+`${bot.ping}`+"`ms :הפינג שלך הוא");
   }
-  if (cmd === `${prefix}warn`) {
-    let member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!member) {
-    message.channel.send("תוודא שכתבת שם שחקן");
-    }
-    if(!message.member.hasPermission("MANAGE_MEMBERS"))
-    if (message.author.id !== ("311604263379795970")) {
-      message.channel.send("אין לך מספיק גישות לבצע את הפקודה הבאה");
-    }
-    if(member.hasPermission("MANAGE_MESSAGES")) {
-      message.channel.send("אתה לא יכול לעשות את זה על השחקן הזה");
-    }
-    let reason = message.content.split(' ').slice(1).join(' ');
-    if(!reason) return message.channel.send("תוודא שכתבת סיבה")
-
-    message.delete().catch(O_o=>{});
-
-    let embed = new Discord.RichEmbed()
-    .setDescription("אזהרה")
-    .setColor("RANDOM")
-    .addField("משתמש", `${member}`,true)
-    .addField("צוות", `${message.author}`,true)
-    .addField("סיבה", reason,true)
-    .setTimestamp()
-    .setFooter(`${bot.user.username}`);
-
-    message.delete().catch(O_o=>{});
-    message.channel.send(`**${member.user.username}#${member.user.discriminator} קיבל אזהרה**`);
-  }
   if (cmd === `${prefix}serverinfo`) {
     let embed = new Discord.RichEmbed()
     .setDescription("מידע על השרת")
