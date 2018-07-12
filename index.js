@@ -18,7 +18,7 @@ bot.on("message", async message => {
   let command = message.content.split(' ').slice(0).join(' ')
 
   if (cmd === `${prefix}ping`) {
-    message.channel.send("רמת הפינג שלך הוא:`"+`${bot.ping} ms`+"`");
+    message.channel.send("רמת הפינג שלך הוא:`"+`ms ${bot.ping}`+"`");
   }
   if (cmd === `${prefix}setgame`) {
   if(!message.member.hasPermission("MANAGE_GUILD"))
