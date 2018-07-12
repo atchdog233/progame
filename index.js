@@ -24,7 +24,6 @@ bot.on("message", async message => {
     let embed = new Discord.RichEmbed()
     .setDescription("Server Information")
     .setColor(`RANDOM`)
-    .setThumbnail(sicon)
     .addField("שם השרת", message.guild.name)
     .addField("של השרת ID", `${message.guild.id}`)
     .addField("מנהל השרת", message.guild.owner.user.tag)
