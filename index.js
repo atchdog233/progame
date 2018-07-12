@@ -20,6 +20,40 @@ bot.on("message", async message => {
   if (cmd === `${prefix}ping`) {
     message.channel.send("`"+`${bot.ping}`+"`ms :הפינג שלך הוא");
   }
+  if (cmd === `${prefix}warn`) {
+    let member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!member) {
+    message.channel.send("תוודא שכתבת שם שחקן");
+    }
+    if(!message.member.hasPermission("MANAGE_MEMBERS"))
+    if (message.author.id !== ("311604263379795970")) {
+      message.channel.send("אין לך מספיק גישות לבצע את הפקודה הבאה");
+    }
+    if(member.hasPermission("MANAGE_MESSAGES")) {
+      message.channel.send("אתה לא יכול לעשות את זה על השחקן הזה");
+    }
+    let reason = message.content.split(' ').slice(1).join(' ');
+    if(!reason) return message.channel.send("תוודא שרשמת סיבה")
+
+    message.delete().catch(O_o=>{});
+
+    let embed = new Discord.RichEmbed()
+    .setDescription("אזהרה")
+    .setColor("RANDOM")
+    .addField("משתמש", `${member}`,true)
+    .addField("צוות", `${message.author}`,true)
+    .addField("סיבה", rreason,true)
+    .setTimestamp()
+    .setFooter(`${bot.user.username}`);
+
+    //let warnschannel = message.guild.channels.find(`name`, "mod-log");
+    //if(!warnschannel) return message.channel.send("Can't find channel called `mod-log`");
+
+    message.delete().catch(O_o=>{});
+    //warnschannel.send(embed);
+    message.channel.send(`**${member.user.username}#${member.user.discriminator} קיבל אזהרה**`);
+    message.member.send(embed)
+  }
   if (cmd === `${prefix}serverinfo`) {
     let embed = new Discord.RichEmbed()
     .setDescription("מידע על השרת")
@@ -33,7 +67,9 @@ bot.on("message", async message => {
     .addField("מספר בוטים", `${message.guild.members.filter(member => member.user.bot).size}` || "לא מצאתי שום בוט")
     .addField("מספר רולים", message.guild.roles.size || "לשרת אין שום רול")
     .addField("השרת נוצר ב", `${message.guild.createdAt}`)
-    .addField("אתה הצטרפת לשרת ב", `${message.member.joinedAt}`);
+    .addField("אתה הצטרפת לשרת ב", `${message.member.joinedAt}`)
+    .setTimestamp()
+    .setFooter(`${bot.user.username}`);
 
     message.channel.send(embed);
   }
@@ -80,12 +116,14 @@ var type = 'ממבר';
 		.setTitle(`${user.username}#${user.discriminator}`)
 		.addField("של השחקן ID", `${user.id}`)
 		.addField("השם כינוי של השחקן", `${member.nickname !== null ? `${member.nickname}` : 'אין שם כינוי'}`)
-        .addField("יצר את החשבון ב", `${user.createdAt}`)
+                .addField("יצר את החשבון ב", `${user.createdAt}`)
 		.addField("הצטרף לשרת ב", `${message.member.joinedAt}`)
 		.addField("סוג משתמש", `**`+type+`**`)
-        .addField("סטטוס של השחקן", `${user.presence.status}`)
+                .addField("סטטוס של השחקן", `${user.presence.status}`)
 		.addField("משחק של השחקן", `${user.presence.game ? user.presence.game.name : 'הוא כרגע לא משחק'}`)
 		.addField("הרולים של השחקן", `${member.roles.filter(r => r.id !== message.guild.id).map(roles => `<@&${roles.id}>`).join(" ") || "לשחקן אין שום רול"}`)
+                .setTimestamp()
+                .setFooter(`${bot.user.username}`);
      message.channel.send({embed})
   }
   if (cmd === `${prefix}clear`) {
@@ -119,6 +157,8 @@ var type = 'ממבר';
       .setColor(`RANDOM`)
       .setTitle(`${x5bzm.username}#${x5bzm.discriminator}`)
       .setImage(`${x5bzm.avatarURL}`)
+      .setTimestamp()
+      .setFooter(`${bot.user.username}`);
     message.channel.sendEmbed(embed);
   }
   if (cmd === `${prefix}setgame`) {
@@ -141,7 +181,7 @@ var type = 'ממבר';
   if(args[0] == "Moderation") {
     let embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Moderation Commands")
-    .setDescription("`clear` `purge`")
+    .setDescription("`warn` `clear` `purge`")
     .setColor("RANDOM")
     .setTimestamp()
     .setFooter(`${bot.user.username}`);
@@ -151,7 +191,7 @@ var type = 'ממבר';
   if(args[0] == "moderation") {
     let embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Moderation Commands")
-    .setDescription("`clear` `purge`")
+    .setDescription("`warn` `clear` `purge`")
     .setColor("RANDOM")
     .setTimestamp()
     .setFooter(`${bot.user.username}`);
