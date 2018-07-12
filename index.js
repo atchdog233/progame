@@ -28,7 +28,7 @@ bot.on("message", async message => {
     .setDescription("\n**Usage:**\n.help <catagory>\n\n**__Catagories:__**\n\n**Moderation**\n**Fun**\n**Other**")
     .setColor("RANDOM")
     .setTimestamp()
-    .setFooter(`${bot.user.username} ${bot.user.displayAvatarURL}`);
+    .setFooter(`${bot.user.username} ${bot.displayAvatarURL}`);
 
      message.channel.send(embed);
   }
