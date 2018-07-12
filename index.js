@@ -37,15 +37,15 @@ bot.on("message", async message => {
   }
   if (cmd === `${prefix}help`) {
 
-  if(args[0] == "Moderation" || "moderation") {
+  if(args[0] == "Moderation") {
     message.channel.send("**בקרוב**")
     return;
   }
-   if(args[0] == "Fun" || "fun") {
+   if(args[0] == "Fun") {
     message.channel.send("**בקרוב**")
     return;
   }
-  if(args[0] == "Other" || "other") {
+  if(args[0] == "Other") {
     let embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Other Commands")
     .setDescription("`ping` `credit` `setgame` `resetgame`")
