@@ -1,6 +1,7 @@
 const ms = require("ms");
 const fs = require("fs");
 const Discord = require("discord.js")
+const warn = require("./warns.json")
 
 var user = {};
 var warn = {};
