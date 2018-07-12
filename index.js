@@ -25,16 +25,16 @@ bot.on("message", async message => {
     .setDescription("Server Information")
     .setColor(`RANDOM`)
     .setThumbnail(sicon)
-    .addField("Server Name", message.guild.name)
-    .addField("Server ID", `${message.guild.id}`)
-    .addField("Owner", message.guild.owner.user.tag)
-    .addField("Region", message.guild.region)
-    .addField("Members", `${message.guild.memberCount}`)
-    .addField("Users", `${message.guild.members.filter(member => !member.user.bot).size}`)
-    .addField("Bots", `${message.guild.members.filter(member => member.user.bot).size}` || "I not find any bot")
-    .addField("Roles", message.guild.roles.size || "Server has no roles")
-    .addField("Server Created", `${message.guild.createdAt}`)
-    .addField("You Joined", `${message.author.joinedAt}`);
+    .addField("שם השרת", message.guild.name)
+    .addField("של השרת ID", `${message.guild.id}`)
+    .addField("מנהל השרת", message.guild.owner.user.tag)
+    .addField("איזור", message.guild.region)
+    .addField("מספר שחקנים ובוטים", `${message.guild.memberCount}`)
+    .addField("מספר שחקנים", `${message.guild.members.filter(member => !member.user.bot).size}`)
+    .addField("מספר בוטים", `${message.guild.members.filter(member => member.user.bot).size}` || "I not find any bot")
+    .addField("מספר רולים", message.guild.roles.size || "Server has no roles")
+    .addField("השרת נוצר ב", `${message.guild.createdAt}`)
+    .addField("אתה הצטרפת לשרת ב", `${message.author.joinedAt}`);
 
     message.channel.send(embed);
   }
