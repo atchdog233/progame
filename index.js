@@ -22,7 +22,7 @@ bot.on("message", async message => {
   }
   if (cmd === `${prefix}serverinfo`) {
     let embed = new Discord.RichEmbed()
-    .setDescription("Server Information")
+    .setDescription("מידע על השרת")
     .setColor(`RANDOM`)
     .addField("שם השרת", message.guild.name)
     .addField("של השרת ID", `${message.guild.id}`)
@@ -93,7 +93,7 @@ bot.on("message", async message => {
   if(args[0] == "Other") {
     let embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Other Commands")
-    .setDescription("`ping` `credit` `setgame` `resetgame` `avatar`")
+    .setDescription("`ping` `credit` `setgame` `resetgame` `avatar` `serverinfo`")
     .setColor("RANDOM")
     .setTimestamp()
     .setFooter(`${bot.user.username}`);
@@ -103,7 +103,7 @@ bot.on("message", async message => {
   if(args[0] == "other") {
     let embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Other Commands")
-    .setDescription("`ping` `credit` `setgame` `resetgame` `avatar`")
+    .setDescription("`ping` `credit` `setgame` `resetgame` `avatar` `serverinfo`")
     .setColor("RANDOM")
     .setTimestamp()
     .setFooter(`${bot.user.username}`);
