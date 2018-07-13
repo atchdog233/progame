@@ -18,9 +18,6 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
   let command = message.content.split(' ').slice(0).join(' ')
 
-  if (cmd === `${prefix}ping`) {
-    message.channel.send("`"+`${bot.ping}`+"`ms :הפינג שלך הוא");
-  }
   if (cmd === `${prefix}serverinfo`) {
     let embed = new Discord.RichEmbed()
     .setDescription("מידע על השרת")
