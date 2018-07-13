@@ -18,25 +18,6 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
   let command = message.content.split(' ').slice(0).join(' ')
 
-  if (cmd === `${prefix}avatar`) {
-  var member = message.mentions.users.first();
-  var x5bzm;
-    if(!member) {
-    }
-    if(member){
-        var x5bzm = member;
-    } else {
-        var x5bzm = message.author;
-        
-    }
-      const embed = new Discord.RichEmbed()
-      .setColor(`RANDOM`)
-      .setTitle(`${x5bzm.username}#${x5bzm.discriminator}`)
-      .setImage(`${x5bzm.avatarURL}`)
-      .setTimestamp()
-      .setFooter(`${bot.user.username}`);
-    message.channel.sendEmbed(embed);
-  }
   if (cmd === `${prefix}setgame`) {
   if(!message.member.hasPermission("MANAGE_GUILD"))
   if (message.author.id !== ("311604263379795970")) return message.channel.send("אין לך מספיק גישות לבצע את הפקודה הבאה");
