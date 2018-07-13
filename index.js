@@ -18,9 +18,6 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
   let command = message.content.split(' ').slice(0).join(' ')
 
-  if (cmd === `${prefix}credit`) {
-    message.channel.send('**:יוצר הבוט הוא**\n\n`Derpy [MIG] ᴰᵉᵛ ⚒#6522`');
-  }
   if (cmd === `${prefix}help`) {
 
   if(args[0] == "Moderation") {
