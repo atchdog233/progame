@@ -18,65 +18,8 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
   let command = message.content.split(' ').slice(0).join(' ')
 
-  if (cmd === `${prefix}help`) {
-
-  if(args[0] == "Moderation") {
-    let embed = new Discord.RichEmbed()
-    .setTitle("ProGame Israel Community Moderation Commands")
-    .setDescription("`clear` `purge`")
-    .setColor("RANDOM")
-    .setTimestamp()
-    .setFooter(`${bot.user.username}`);
-    message.channel.send(embed)
-    return;
-  }
-  if(args[0] == "moderation") {
-    let embed = new Discord.RichEmbed()
-    .setTitle("ProGame Israel Community Moderation Commands")
-    .setDescription("`clear` `purge`")
-    .setColor("RANDOM")
-    .setTimestamp()
-    .setFooter(`${bot.user.username}`);
-    message.channel.send(embed)
-    return;
-  }
-   if(args[0] == "Fun") {
-    message.channel.send("**בקרוב**")
-    return;
-  }
-   if(args[0] == "fun") {
-    message.channel.send("**בקרוב**")
-    return;
-  }
-  if(args[0] == "Other") {
-    let embed = new Discord.RichEmbed()
-    .setTitle("ProGame Israel Community Other Commands")
-    .setDescription("`ping` `credit` `setgame` `resetgame` `avatar` `serverinfo` `userinfo`")
-    .setColor("RANDOM")
-    .setTimestamp()
-    .setFooter(`${bot.user.username}`);
-    message.channel.send(embed)
-    return;
-  }
-  if(args[0] == "other") {
-    let embed = new Discord.RichEmbed()
-    .setTitle("ProGame Israel Community Other Commands")
-    .setDescription("`ping` `credit` `setgame` `resetgame` `avatar` `serverinfo` `userinfo`")
-    .setColor("RANDOM")
-    .setTimestamp()
-    .setFooter(`${bot.user.username}`);
-    message.channel.send(embed)
-    return;
-  }
-
-    const embed = new Discord.RichEmbed()
-    .setTitle("ProGame Israel Community Help Commands")
-    .setDescription("\n**שימוש:**\n.help <קטגוריה>\n\n**__:קטגוריות__**\n\n**Moderation**\n**Fun**\n**Other**")
-    .setColor("RANDOM")
-    .setTimestamp()
-    .setFooter(`${bot.user.username}`);
-
-     message.channel.send(embed);
+  if (command === `test`) {
+message.channel.send("I am Online")
   }
 });
 
