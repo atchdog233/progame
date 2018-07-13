@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, args, muterole) => {
   let id = str.replace(/[<@!>]/g, '');
 
   bot.fetchUser(id)
-  .then(user => {user.send(`**${ms(ms(mutetime))}** למשך **${message.guild.name}** קיבלת מיוט בשרת\n**${reason} בגלל**`)})
+  .then(user => {user.send(`**${ms(ms(mutetime))}** למשך **${message.guild.name}** קיבלת מיוט בשרת\n${reason} בגלל`)})
 
   setTimeout(function(){
     member.removeRole(role.id);
