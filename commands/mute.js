@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args, muterole) => {
   if(member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("אתה לא יכול לבצע תפקודה על השחקן הזה");
   let mutetime = args[1];
   if(!mutetime) return message.channel.send("תוודא שרשמת לכמה זמן המיוט");
-  let reason = message.content.split(' ').slice(2).join(' ')
+  let reason = args[2]
   if(!reason) return message.channel.send("תוודא שרשמת סיבה")
   let role = message.guild.roles.find(`name`, `🤬 Muted🤬`);
   if(!role) return message.channel.send("לא הצלחתי לתת מיוט כי אין בשרת את הרול המתאים")
