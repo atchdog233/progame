@@ -4,9 +4,9 @@ const ms = require("ms");
 module.exports.run = async (bot, message, args, muterole) => {
 
   let member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  if(!member) return message.channel.send(" ");
+  if(!member) return message.channel.send("תוודא שרשמת שם של שחקן");
   if(!message.member.hasPermission("MANAGE_MESSAGES")) 
-  if (message.author.id !== ("311604263379795970")) return message.channel.send(" ");
+  if (message.author.id !== ("311604263379795970")) return message.channel.send("אין לך מספיק גישות לבצע את הפקודה הבאה");
   if(member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(" ");
   let reason = message.content.split(' ').slice(2).join(' ')
   if(!reason) return message.channel.send(" ")
