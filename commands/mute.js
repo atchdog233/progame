@@ -7,11 +7,10 @@ module.exports.run = async (bot, message, args, muterole) => {
   if(!member) return message.channel.send("תוודא שרשמת שם של שחקן");
   if(!message.member.hasPermission("MANAGE_MESSAGES")) 
   if (message.author.id !== ("311604263379795970")) return message.channel.send("אין לך מספיק גישות לבצע את הפקודה הבאה");
-  if(member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(" ");
+  if(member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("אתה לא יכול לבצע תפקודה על השחקן הזה");
   let reason = message.content.split(' ').slice(2).join(' ')
-  if(!reason) return message.channel.send(" ")
+  if(!reason) return message.channel.send("תוודא שרשמת סיבה")
   let role = message.guild.roles.find(`name`, `🤬 Muted🤬`);
-
   if(!role) return message.channel.send("תוודא שיצרת רול בשם המתאים")
 
   message.delete().catch(O_o=>{});
