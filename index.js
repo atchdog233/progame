@@ -18,12 +18,6 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
   let command = message.content.split(' ').slice(0).join(' ')
 
-  if (cmd === `${prefix}setgame`) {
-  if(!message.member.hasPermission("MANAGE_GUILD"))
-  if (message.author.id !== ("311604263379795970")) return message.channel.send("אין לך מספיק גישות לבצע את הפקודה הבאה");
-  bot.user.setGame(message.content.split(' ').slice(1).join(' '));
-  message.channel.send("`"+message.content.split(' ').slice(1).join(' ')+"`הבוט עכשיו משחק ב")
-  }
   if (cmd === `${prefix}resetgame`) {
   if(!message.member.hasPermission("MANAGE_GUILD"))
   if (message.author.id !== ("311604263379795970")) return message.channel.send("אין לך מספיק גישות לבצע את הפקודה הבאה");
