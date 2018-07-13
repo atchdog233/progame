@@ -19,7 +19,9 @@ bot.on("message", async message => {
   let command = message.content.split(' ').slice(0).join(' ')
 
   if (command === `test`) {
-message.channel.send("I am Online")
+  if (message.author.id !== ("311604263379795970")) return;
+  if (message.guild.id !== ("465902426889650177")) return;
+message.channel.send("אני אונליין")
   }
 });
 
