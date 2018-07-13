@@ -46,3 +46,5 @@ let commandfile = bot.commands.get(cmd.slice(prefix.length));
   }, cdseconds * 1000)
 
 });
+
+bot.login(process.env.BOT_TOKEN);
