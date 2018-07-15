@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
     let id = str.replace(/[<@!>]/g, '');
 
     bot.fetchUser(id)
-    .then(user => {user.send(`${reason} בגלל\n **${message.guild.name}** קיבלת אזהרה בשרת`)})
+    .then(user => {user.send(`**${message.guild.name}** קיבלת אזהרה בשרת\n${reason} בגלל`)})
 
   }
 
