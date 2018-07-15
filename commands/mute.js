@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args, muterole) => {
   if(!message.member.hasPermission("MANAGE_MESSAGES")) 
   if (message.author.id !== ("311604263379795970")) return message.channel.send("אין לך מספיק גישות לבצע את הפקודה הבאה");
   if(member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("אתה לא יכול לבצע תפקודה על השחקן הזה");
-  let mutetime = args.slice(1).join(" ")
+  let mutetime = args[1]
   if(!mutetime) return message.channel.send("תוודא שרשמת לכמה זמן המיוט");
   let reason = args.slice(2).join(" ")
   if(!reason) return message.channel.send("תוודא שרשמת סיבה")
