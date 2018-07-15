@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
     if(!message.member.hasPermission("KICK_MEMBERS"))
     if (message.author.id !== ("311604263379795970")) return message.channel.send("אין לך מספיק גישות לבצע את הפקודה הבאה");
     if(member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("אתה לא יכול לבצע תפקודה על השחקן הזה");
-    let reason = args.join(" ").slice(22);
+    let reason = message.content.split(' ').slice(1).join(' ')
     if(!reason) return message.channel.send("תוודא שרשמת סיבה")
 
     message.delete().catch(O_o=>{});
