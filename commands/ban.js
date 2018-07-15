@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
     let reason = args.slice(2).join(" ")
     if(!reason) return message.channel.send("תוודא שרשמת סיבה");
     if(member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("אתה לא יכול לבצע תפקודה על השחקן הזה");
-    let bantime = args.slice(1).join(" ")
+    let bantime = args[1]
     if(!bantime) return message.channel.send("תוודא שרשמת לכמה זמן");
 
     message.delete()
