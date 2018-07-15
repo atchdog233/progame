@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
   if(args[0] == "Moderation") {
     let embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Moderation Commands")
-    .setDescription("`mute` `warn` `clear` `purge`")
+    .setDescription("`ban` `kick` `mute` `warn` `clear` `purge`")
     .setColor("RANDOM")
     .setTimestamp()
     .setFooter(`${bot.user.username}`);
@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
   if(args[0] == "moderation") {
     let embed = new Discord.RichEmbed()
     .setTitle("ProGame Israel Community Moderation Commands")
-    .setDescription("`mute` `warn` `clear` `purge`")
+    .setDescription("`ban` `kick` `mute` `warn` `clear` `purge`")
     .setColor("RANDOM")
     .setTimestamp()
     .setFooter(`${bot.user.username}`);
