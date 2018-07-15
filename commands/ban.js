@@ -7,10 +7,10 @@ module.exports.run = async (bot, message, args) => {
     if(!member) return message.channel.send("תוודא שרשמת שם של שחקן"); 
     if(!message.member.hasPermission("BAN_MEMBERS")) 
     if (message.author.id !== ("311604263379795970")) return message.channel.send("אין לך מספיק גישות לבצע את הפקודה הבאה");
-    let reason = message.content.split(' ').slice(2).join(' ')
+    let reason = message.content.split(' ').slice(3).join(' ')
     if(!reason) return message.channel.send("תוודא שרשמת סיבה");
     if(member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("אתה לא יכול לבצע תפקודה על השחקן הזה");
-    let bantime = message.content.split(' ').slice(1).join(' ')
+    let bantime = message.content.split(' ').slice(2).join(' ')
     if(!bantime) return message.channel.send("תוודא שרשמת לכמה זמן");
 
     message.delete()
