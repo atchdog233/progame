@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
     let id = str.replace(/[<@!>]/g, '');
 
     bot.fetchUser(id)
-    .then(user => {user.send(`**${ms(ms(bantime))}** למשך **${message.guild.name}** קיבלת באן בשרת\n${reason} בגלל`)})
+    .then(user => {user.send(`**${ms(ms(bantime))}** למשך **${message.guild.name}** קיבלת באן בשרת\n${reason}`)})
   
     setTimeout(function(){
     message.guild.unban(member);
