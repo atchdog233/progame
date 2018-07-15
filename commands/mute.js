@@ -8,9 +8,9 @@ module.exports.run = async (bot, message, args, muterole) => {
   if(!message.member.hasPermission("MANAGE_MESSAGES")) 
   if (message.author.id !== ("311604263379795970")) return message.channel.send("אין לך מספיק גישות לבצע את הפקודה הבאה");
   if(member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("אתה לא יכול לבצע תפקודה על השחקן הזה");
-  let mutetime = message.content.split(' ').slice(1).join(' ')
+  let mutetime = message.content.split(' ').slice(2).join(' ')
   if(!mutetime) return message.channel.send("תוודא שרשמת לכמה זמן המיוט");
-  let reason = message.content.split(' ').slice(2).join(' ')
+  let reason = message.content.split(' ').slice(3).join(' ')
   if(!reason) return message.channel.send("תוודא שרשמת סיבה")
   let role = message.guild.roles.find(`name`, `🤬 Muted🤬`);
   if(!role) return message.channel.send("לא הצלחתי לתת מיוט כי אין בשרת את הרול המתאים")
