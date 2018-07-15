@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
     let id = str.replace(/[<@!>]/g, '');
 
     bot.fetchUser(id)
-    .then(user => {user.send(`${reason} בגלל **${message.guild.name}** קיבלת קיק בשרת`)})
+    .then(user => {user.send(`**${message.guild.name}** קיבלת קיק בשרת\n${reason} בגלל`)})
 
   }
 
