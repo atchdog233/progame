@@ -26,6 +26,7 @@ module.exports.run = async (bot, message, args) => {
     .then(user => {user.send(`**${ms(ms(bantime))}** למשך **${message.guild.name}** קיבלת באן בשרת\n${reason} בגלל`)})
   
     setTimeout(function(){
+    message.guild.unban(member);
       message.channel.send(`**נגמר הבאן ${member.user.username}#${member.user.discriminator}**`);
     }, ms(bantime));
   
