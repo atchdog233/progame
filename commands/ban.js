@@ -26,12 +26,12 @@ module.exports.run = async (bot, message, args) => {
     .then(user => {user.send(`**${ms(ms(bantime))}** למשך **${message.guild.name}** קיבלת באן בשרת\n${reason} בגלל`)})
   
     setTimeout(function(){
-      message.channel.send(`נגמר הבאן ${member.user.username}#${member.user.discriminator}**`);
+      message.channel.send(`**נגמר הבאן ${member.user.username}#${member.user.discriminator}**`);
     }, ms(bantime));
   
     setTimeout(function(){
     bot.fetchUser(id)
-    .then(user => {user.send(`נגמר לך הבאן בשרת ${message.guild.name}`)});
+    .then(user => {user.send(`**${message.guild.name}** נגמר לך הבאן בשרת`)});
   }, ms(bantime));
   
   
